@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>ATTR Amyloidosis | Social Media Analytics Report</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* ── AlphaMetricx Brand Palette ── */
+  /* Deep navy base — professional intelligence platform */
+  --bg: #f0f4f8;
+  --surface: #ffffff;
+  --surface2: #f7f9fc;
+  --surface3: #eef2f7;
+  --border: #dde3ed;
+  --border2: #e8edf5;
+  --ink: #0f1f3d;
+  --ink2: #2d4163;
+  --ink3: #6b7fa3;
+  --ink4: #9baac4;
+
+  /* AMX Brand Blue — primary */
+  --amx-blue: #1a3a6b;
+  --amx-blue-mid: #2952a3;
+  --amx-blue-lt: rgba(41,82,163,0.08);
+  --amx-blue-md: rgba(41,82,163,0.18);
+
+  /* AMX Accent — electric cyan/teal */
+  --teal: #0ea5e9;
+  --teal-lt: rgba(14,165,233,0.08);
+  --teal-md: rgba(14,165,233,0.18);
+  --teal-dk: #0369a1;
+
+  /* AMX Crisis Red */
+  --rose: #dc2626;
+  --rose-lt: rgba(220,38,38,0.07);
+  --rose-md: rgba(220,38,38,0.16);
+
+  /* AMX Warning Amber */
+  --amber: #d97706;
+  --amber-lt: rgba(217,119,6,0.08);
+  --amber-md: rgba(217,119,6,0.18);
+
+  /* AMX Trending Green */
+  --blue: #059669;
+  --blue-lt: rgba(5,150,105,0.08);
+  --blue-md: rgba(5,150,105,0.18);
+
+  /* AMX Industry Watch */
+  --plum: #7c3aed;
+  --plum-lt: rgba(124,58,237,0.07);
+  --plum-md: rgba(124,58,237,0.16);
+
+  --slate: #64748b;
+  --slate-lt: rgba(100,116,139,0.08);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact;scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--ink);font-family:'Plus Jakarta Sans',sans-serif;font-weight:400;line-height:1.65;font-size:13px;}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:5px;height:5px;}
+::-webkit-scrollbar-track{background:var(--surface2);}
+::-webkit-scrollbar-thumb{background:var(--amx-blue-md);border-radius:4px;}
+
+/* ── NAV ── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--amx-blue);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 2px 12px rgba(26,58,107,0.18);
+}
+
+/* InfoVision logo in nav */
+.nav-logo-infovision {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 10px 0;
+  flex-shrink: 0;
+}
+.nav-logo-infovision svg {
+  height: 32px;
+  width: auto;
+}
+
+.nav-divider {
+  width: 1px;
+  height: 28px;
+  background: rgba(255,255,255,0.15);
+  flex-shrink: 0;
+}
+
+/* AMX badge */
+.nav-amx-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 0;
+  flex-shrink: 0;
+}
+.nav-amx-badge .amx-logo {
+  background: var(--teal);
+  color: #fff;
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 9px;
+  border-radius: 4px;
+  letter-spacing: .12em;
+}
+.nav-amx-badge .amx-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.nav-tabs { display: flex; gap: 0; overflow-x: auto; flex: 1; }
+.nav-tabs::-webkit-scrollbar{display:none;}
+.nav-tab {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  padding: 18px 13px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  transition: color .2s, border-color .2s;
+}
+.nav-tab.active { color: #ffffff; border-bottom-color: var(--teal); }
+.nav-tab:hover:not(.active) { color: rgba(255,255,255,0.8); }
+
+/* ── SECTIONS ── */
+section { display: none; }
+section.active { display: block; }
+.page { max-width: 1160px; margin: 0 auto; padding: 40px 32px 60px; }
+
+/* ── COVER ── */
+.cover {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0f1f3d 0%, #1a3a6b 45%, #1e4080 70%, #0e3460 100%);
+  border-bottom: 3px solid var(--teal);
+  padding: 64px 32px 52px;
+}
+.cover::before {
+  content: '';
+  position: absolute;
+  top: -100px; right: -100px;
+  width: 520px; height: 520px;
+  background: radial-gradient(circle, rgba(14,165,233,0.12) 0%, transparent 65%);
+  pointer-events: none;
+}
+.cover::after {
+  content: '';
+  position: absolute;
+  bottom: -60px; left: 15%;
+  width: 380px; height: 380px;
+  background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+/* AMX watermark grid */
+.cover .cover-inner::before {
+  content: '';
+  position: absolute;
+  inset: -64px -32px;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+}
+.cover-inner { max-width: 1160px; margin: 0 auto; position: relative; }
+
+.eyebrow {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--teal);
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--teal); opacity: .7; }
+
+h1.hero {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(40px, 6vw, 72px);
+  font-weight: 700;
+  line-height: 1.0;
+  color: #ffffff;
+  margin-bottom: 8px;
+  letter-spacing: -.02em;
+}
+h1.hero em { font-style: italic; color: var(--teal); }
+
+.hero-sub {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 32px;
+  letter-spacing: .04em;
+  line-height: 1.8;
+}
+
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 40px; }
+.tag {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 3px;
+}
+/* Cover tags in white-on-translucent for dark hero */
+.cover .tag {
+  background: rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.85);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+/* Outside cover use colored tags */
+.t-teal  { background: var(--teal-lt);  color: var(--teal-dk);  border: 1px solid var(--teal-md); }
+.t-amber { background: var(--amber-lt); color: var(--amber);    border: 1px solid var(--amber-md); }
+.t-rose  { background: var(--rose-lt);  color: var(--rose);     border: 1px solid var(--rose-md); }
+.t-blue  { background: var(--blue-lt);  color: var(--blue);     border: 1px solid var(--blue-md); }
+.t-plum  { background: var(--plum-lt);  color: var(--plum);     border: 1px solid var(--plum-md); }
+.t-slate { background: var(--slate-lt); color: var(--slate);    border: 1px solid rgba(100,116,139,.2); }
+
+/* ── KPI STRIP ── */
+.kpi-strip {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1px;
+  background: var(--amx-blue-md);
+  border: 1px solid var(--amx-blue-md);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(26,58,107,0.15);
+}
+.kpi {
+  background: rgba(255,255,255,0.08);
+  padding: 20px 18px;
+  transition: background .2s;
+}
+.kpi:hover { background: rgba(255,255,255,0.14); }
+.kpi-n {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 6px;
+  color: #fff;
+}
+.kpi-lbl {
+  font-family: 'Space Mono', monospace;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 3px;
+}
+.kpi-sub { font-size: 10px; color: rgba(255,255,255,0.38); line-height: 1.4; }
+
+/* ── SECTION HEADER ── */
+.sh { border-bottom: 2px solid var(--border); padding-bottom: 24px; margin-bottom: 32px; }
+.sh-num {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--teal-dk);
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.sh-num::before { content: ''; width: 24px; height: 2px; background: var(--teal); border-radius: 2px; }
+h2.sh-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--amx-blue);
+  letter-spacing: -.01em;
+}
+.sh-desc { margin-top: 10px; font-size: 13px; color: var(--ink3); max-width: 700px; line-height: 1.75; }
+
+/* ── SUB LABEL ── */
+.sub {
+  font-family: 'Space Mono', monospace;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--ink3);
+  margin: 32px 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.sub::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+/* ── CARD ── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 22px;
+  transition: border-color .2s, box-shadow .2s;
+  box-shadow: 0 1px 4px rgba(26,58,107,0.06);
+}
+.card:hover { border-color: var(--teal-md); box-shadow: 0 4px 16px rgba(14,165,233,0.1); }
+.ct {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--amx-blue);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+.cb { font-size: 12px; color: var(--ink2); line-height: 1.7; }
+.c-teal  { border-left: 3px solid var(--teal); }
+.c-amber { border-left: 3px solid var(--amber); }
+.c-rose  { border-left: 3px solid var(--rose); }
+.c-blue  { border-left: 3px solid var(--blue); }
+.c-plum  { border-left: 3px solid var(--plum); }
+
+/* ── GRIDS ── */
+.g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.g3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+.g4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; }
+
+/* ── CHART WRAP ── */
+.cw {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 22px;
+  box-shadow: 0 1px 4px rgba(26,58,107,0.05);
+}
+.cw-lbl {
+  font-family: 'Space Mono', monospace;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ink4);
+  margin-bottom: 4px;
+}
+.cw-hl {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--amx-blue);
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+/* ── VERBATIM ── */
+.vb {
+  background: var(--surface2);
+  border-left: 3px solid var(--amx-blue-mid);
+  padding: 14px 18px;
+  margin: 10px 0;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 13px;
+  color: var(--ink2);
+  line-height: 1.7;
+  border-radius: 0 6px 6px 0;
+}
+.vb-src {
+  font-family: 'Space Mono', monospace;
+  font-size: 8px;
+  color: var(--ink4);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin-top: 6px;
+  font-style: normal;
+}
+
+/* ── INSIGHT BOX ── */
+.ins {
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 16px 0;
+  position: relative;
+}
+.ins::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px; height: 100%;
+  background: var(--teal);
+  border-radius: 8px 0 0 8px;
+}
+.ins-lbl {
+  font-family: 'Space Mono', monospace;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--teal-dk);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.ins-lbl::before { content: '→'; }
+.ins-body { font-size: 12px; color: var(--ink2); line-height: 1.7; }
+.ins-amber { background: #fffbeb; border-color: #fde68a; }
+.ins-amber::before { background: var(--amber); }
+.ins-amber .ins-lbl { color: var(--amber); }
+.ins-rose { background: #fff5f5; border-color: #fecaca; }
+.ins-rose::before { background: var(--rose); }
+.ins-rose .ins-lbl { color: var(--rose); }
+
+/* ── STAKEHOLDER TABS ── */
+.stk-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+.stk-tab {
+  font-family: 'Space Mono', monospace;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 7px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--ink3);
+  transition: all .2s;
+}
+.stk-tab.a-teal  { background: var(--teal-dk); color: #fff; border-color: var(--teal-dk); }
+.stk-tab.a-rose  { background: var(--rose);    color: #fff; border-color: var(--rose); }
+.stk-tab.a-blue  { background: var(--blue);    color: #fff; border-color: var(--blue); }
+.stk-tab.a-plum  { background: var(--plum);    color: #fff; border-color: var(--plum); }
+.stk-tab.a-amber { background: var(--amber);   color: #fff; border-color: var(--amber); }
+.stk-panel { display: none; }
+.stk-panel.active { display: block; }
+
+/* ── METRIC ROWS ── */
+.mrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+.mrow:last-child { border-bottom: none; }
+.mname { font-size: 11px; color: var(--ink2); width: 190px; flex-shrink: 0; }
+.mbar { flex: 1; }
+.mbar-bg { height: 6px; background: var(--border); border-radius: 3px; }
+.mbar-fill { height: 6px; border-radius: 3px; transition: width .6s ease; }
+.mval {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  color: var(--ink2);
+  width: 40px;
+  text-align: right;
+  flex-shrink: 0;
+  font-weight: 700;
+}
+
+/* ── PAIN ITEMS ── */
+.pain {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 22px 24px;
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 18px;
+  margin-bottom: 12px;
+  transition: border-color .2s, box-shadow .2s;
+  box-shadow: 0 1px 4px rgba(26,58,107,0.05);
+}
+.pain:hover { border-color: var(--rose-md); box-shadow: 0 4px 14px rgba(220,38,38,0.08); }
+.pain-rk {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--border);
+  line-height: 1;
+  padding-top: 4px;
+}
+.pain-t {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--amx-blue);
+  margin-bottom: 6px;
+}
+.pain-q {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  color: var(--rose);
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+.pain-b { font-size: 12px; color: var(--ink2); line-height: 1.7; margin-bottom: 8px; }
+
+/* ── QOL ── */
+.qol-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  transition: border-color .2s, box-shadow .2s;
+  box-shadow: 0 1px 4px rgba(26,58,107,0.05);
+}
+.qol-card:hover { border-color: var(--amx-blue-md); box-shadow: 0 4px 14px rgba(41,82,163,0.1); }
+.qol-d {
+  font-family: 'Space Mono', monospace;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--amx-blue-mid);
+  margin-bottom: 8px;
+}
+.qol-t {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--amx-blue);
+  margin-bottom: 8px;
+}
+.qol-b { font-size: 12px; color: var(--ink2); line-height: 1.7; }
+.imp { display: flex; align-items: center; gap: 10px; margin-top: 12px; }
+.imp-l { font-family: 'Space Mono', monospace; font-size: 8px; color: var(--ink4); width: 60px; }
+.imp-t { flex: 1; height: 4px; background: var(--border); border-radius: 2px; }
+.imp-f { height: 4px; border-radius: 2px; background: var(--rose); }
+
+/* ── CHIPS ── */
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0; }
+.chip {
+  font-family: 'Space Mono', monospace;
+  font-size: 8px;
+  letter-spacing: .07em;
+  padding: 4px 10px;
+  border-radius: 3px;
+  background: var(--surface2);
+  color: var(--ink3);
+  border: 1px solid var(--border);
+}
+
+/* ── TABLE ── */
+.tbl { width: 100%; border-collapse: collapse; font-size: 12px; }
+.tbl th {
+  font-family: 'Space Mono', monospace;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--amx-blue);
+  padding: 11px 12px;
+  text-align: left;
+  border-bottom: 2px solid var(--amx-blue-md);
+  background: #f0f4f9;
+}
+.tbl td {
+  padding: 11px 12px;
+  border-bottom: 1px solid var(--border);
+  color: var(--ink2);
+  vertical-align: top;
+  line-height: 1.5;
+}
+.tbl tr:last-child td { border-bottom: none; }
+.tbl tr:hover td { background: #f7f9fc; }
+
+/* ── STRATEGY ── */
+.strat {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 22px 24px;
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 20px;
+  margin-bottom: 12px;
+  transition: border-color .2s, box-shadow .2s;
+  box-shadow: 0 1px 4px rgba(26,58,107,0.05);
+}
+.strat:hover { border-color: var(--teal-md); box-shadow: 0 4px 16px rgba(14,165,233,0.1); }
+.strat-n {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--border);
+  line-height: 1;
+  padding-top: 2px;
+}
+.strat-t {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--amx-blue);
+  margin-bottom: 6px;
+}
+.strat-a {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  color: var(--teal-dk);
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+.strat-a::before { content: '→ '; }
+.strat-b { font-size: 12px; color: var(--ink2); line-height: 1.7; }
+
+/* ── SENT ── */
+.s-pos { color: var(--blue); font-weight: 700; }
+.s-neg { color: var(--rose); font-weight: 700; }
+.s-neu { color: var(--ink3); font-weight: 700; }
+
+/* ── KEYWORD CLOUD ── */
+.kw-cloud {
+  padding: 16px 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  line-height: 2.6;
+}
+
+/* ── FOOTER ── */
+footer {
+  border-top: 2px solid var(--amx-blue-md);
+  padding: 24px 32px;
+  max-width: 1160px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  background: var(--surface);
+}
+.fb {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  color: var(--ink3);
+}
+.fb span { color: var(--amx-blue-mid); font-weight: 700; }
+.fn {
+  font-family: 'Space Mono', monospace;
+  font-size: 8px;
+  color: var(--ink4);
+}
+
+/* SVG chart text for light theme */
+svg text { fill: var(--ink3) !important; }
+
+/* ── PRINT ── */
+@media print {
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;}
+  nav{display:none!important;}
+  body{background:#fff!important;color:#000!important;}
+  section{display:block!important;page-break-after:always;break-after:page;}
+  section:last-of-type{page-break-after:avoid;break-after:avoid;}
+  .stk-panel{display:block!important;}
+  .stk-tabs{display:none!important;}
+  .g2{grid-template-columns:1fr 1fr!important;}
+  .g3{grid-template-columns:1fr 1fr!important;}
+  .g4{grid-template-columns:1fr 1fr!important;}
+  .kpi-strip{grid-template-columns:repeat(3,1fr)!important;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <!-- InfoVision Logo -->
+  <div class="nav-logo-infovision">
+    <svg viewBox="0 0 200 48" xmlns="http://www.w3.org/2000/svg" height="36" width="auto">
+      <text x="0" y="30" font-family="Georgia, serif" font-size="22" font-weight="700" fill="#ffffff" letter-spacing="2">INFO</text>
+      <polyline points="82,8 95,34 108,8" fill="none" stroke="#8B1A1A" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round"/>
+      <text x="108" y="30" font-family="Georgia, serif" font-size="22" font-weight="700" fill="#ffffff" letter-spacing="2">ISION</text>
+      <text x="0" y="44" font-family="Arial, sans-serif" font-size="9.5" fill="rgba(255,255,255,0.55)" letter-spacing="0.5">#Accelerate<tspan font-weight="700" fill="rgba(255,255,255,0.75)">Digital</tspan></text>
+    </svg>
+  </div>
+
+  <div class="nav-divider"></div>
+
+  <div class="nav-tabs">
+    <div class="nav-tab active" onclick="showTab('s-overview',this)">Overview</div>
+    <div class="nav-tab" onclick="showTab('s-volume',this)">Volume & Trends</div>
+    <div class="nav-tab" onclick="showTab('s-sentiment',this)">Sentiment</div>
+    <div class="nav-tab" onclick="showTab('s-platforms',this)">Platforms</div>
+    <div class="nav-tab" onclick="showTab('s-stakeholders',this)">Stakeholders</div>
+    <div class="nav-tab" onclick="showTab('s-themes',this)">Themes</div>
+    <div class="nav-tab" onclick="showTab('s-painpoints',this)">Pain Points</div>
+    <div class="nav-tab" onclick="showTab('s-qol',this)">QoL Impact</div>
+    <div class="nav-tab" onclick="showTab('s-keywords',this)">Keywords</div>
+    <div class="nav-tab" onclick="showTab('s-strategy',this)">Implications</div>
+  </div>
+</nav>
+
+<!-- ══ OVERVIEW ══ -->
+<section id="s-overview" class="active">
+  <div class="cover">
+    <div class="cover-inner">
+      <!-- Cover top bar with logos -->
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;">
+        <div class="eyebrow" style="margin-bottom:0;">Social Media Analytics Report · USA · Apr 2025 – Mar 2026</div>
+        <!-- InfoVision logo white version for dark cover -->
+        <div style="display:flex;align-items:center;gap:12px;flex-shrink:0;">
+          <svg viewBox="0 0 200 44" xmlns="http://www.w3.org/2000/svg" height="34" width="auto">
+            <text x="0" y="26" font-family="Georgia, serif" font-size="20" font-weight="700" fill="#ffffff" letter-spacing="1.5">INFO</text>
+            <polyline points="76,6 88,28 100,6" fill="none" stroke="#c0392b" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+            <text x="100" y="26" font-family="Georgia, serif" font-size="20" font-weight="700" fill="#ffffff" letter-spacing="1.5">ISION</text>
+            <text x="0" y="40" font-family="Arial, sans-serif" font-size="8.5" fill="rgba(255,255,255,0.5)" letter-spacing="0.4">#Accelerate<tspan font-weight="700" fill="rgba(255,255,255,0.75)">Digital</tspan></text>
+          </svg>
+        </div>
+      </div>
+      <h1 class="hero">ATTR <em>Amyloidosis</em><br>Social Intelligence</h1>
+      <div class="hero-sub">Transthyretin Amyloidosis (ATTR-CM & hATTR-PN) · 5 Stakeholder Groups · 6 Platforms · 824 Posts</div>
+      <div class="tags">
+        <span class="tag t-teal">Patients</span>
+        <span class="tag t-rose">Caregivers</span>
+        <span class="tag t-blue">Cardiologists / HCPs</span>
+        <span class="tag t-plum">Advocacy Groups</span>
+        <span class="tag t-amber">Pharma / Industry</span>
+        <span class="tag t-slate">USA · 6 Months</span>
+      </div>
+      <div class="kpi-strip">
+        <div class="kpi"><div class="kpi-n" style="color:var(--teal)">824</div><div class="kpi-lbl">Total Mentions</div><div class="kpi-sub">Apr 2025 – Mar 2026</div></div>
+        <div class="kpi"><div class="kpi-n" style="color:var(--rose)">+620%</div><div class="kpi-lbl">Volume Growth</div><div class="kpi-sub">Jul 2025 spike: 131 posts</div></div>
+        <div class="kpi"><div class="kpi-n" style="color:var(--amber)">11%</div><div class="kpi-lbl">Negative Sentiment</div><div class="kpi-sub">Access & diagnosis frustration</div></div>
+        <div class="kpi"><div class="kpi-n" style="color:var(--blue)">5</div><div class="kpi-lbl">Stakeholder Groups</div><div class="kpi-sub">Patients, caregivers, HCPs, advocacy, pharma</div></div>
+        <div class="kpi"><div class="kpi-n" style="color:var(--plum)">7</div><div class="kpi-lbl">Platforms Tracked</div><div class="kpi-sub">Twitter/X, Facebook, TV, LinkedIn, Instagram, TikTok, Video</div></div>
+        <div class="kpi"><div class="kpi-n" style="color:var(--slate)">5</div><div class="kpi-lbl">Distinct Themes</div><div class="kpi-sub">5 themes · 7 platforms · 108.7M audience</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page">
+    <div class="sh">
+      <div class="sh-num">Executive Summary</div>
+      <h2 class="sh-title">Six Months of ATTR Discourse — What the Data Shows</h2>
+      <p class="sh-desc">Analysis of 48,300+ public social media posts and forum threads published Oct 2024 – Apr 2025. Sourced from Reddit (r/amyloidosis, r/heartfailure), Twitter/X, Facebook patient support groups, YouTube, patient advocacy forums (ARC, ATSUSA), and LinkedIn.</p>
+    </div>
+
+    <div class="g2" style="margin-bottom:16px;">
+      <div class="cw">
+        <div class="cw-lbl">Monthly mention volume by stakeholder group</div>
+        <div class="cw-hl">Volume spiked 338% in Jul 2025 — Alnylam data and ATTR conference season</div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="620" height="240" style="display:block;width:100%">
+          <line x1="36" y1="208" x2="604" y2="208" stroke="#2a2f3e" stroke-width="1"/>
+          <text x="32" y="212" text-anchor="end" font-size="9" font-family="Plus Jakarta Sans,sans-serif" fill="#4a5068">0</text>
+          <line x1="36" y1="174" x2="604" y2="174" stroke="#2a2f3e" stroke-width="1"/>
+          <text x="32" y="178" text-anchor="end" font-size="9" font-family="Plus Jakarta Sans,sans-serif" fill="#4a5068">25</text>
+          <line x1="36" y1="140" x2="604" y2="140" stroke="#2a2f3e" stroke-width="1"/>
+          <text x="32" y="144" text-anchor="end" font-size="9" font-family="Plus Jakarta Sans,sans-serif" fill="#4a5068">50</text>
+          <line x1="36" y1="106" x2="604" y2="106" stroke="#2a2f3e" stroke-width="1"/>
+          <text x="32" y="110" text-anchor="end" font-size="9" font-family="Plus Jakarta Sans,sans-serif" fill="#4a5068">75</text>
+          <line x1="36" y1="72" x2="604" y2="72" stroke="#2a2f3e" stroke-width="1"/>
+          <text x="32" y="76" text-anchor="end" font-size="9" font-family="Plus Jakarta Sans,sans-serif" fill="#4a5068">100</text>
+          <rect x="39" y="194" width="41" height="14" fill="#2dd4bf" rx="2"/><rect x="39" y="192" width="41" height="2" fill="#fbbf24" rx="2"/><rect x="39" y="190" width="41" height="2" fill="#c084fc" rx="2"/>
+          <text x="59" y="222" text-anchor="middle" font-size="10" font-family="Plus Jakarta Sans,sans-serif" fill="#4a5068">Apr</text>
+          <rect x="86" y="181" width="41" height="27" fill="#2dd4bf" rx="2"/><rect x="86" y="169" width="41" height="12" fill="#fbbf24" rx="2"/><rect x="86" y="168" width="41" height="1" fill="#c084fc" rx="2"/>
+          <text x="106" y="222" text-anchor="middle" font-size="10" font-family="Plus Jakarta Sans,sans-serif" fill="#4a5068">May</text>
+          <rect x="133" y="185" width="41" height="23" fill="#2dd4bf" rx="2"/><rect x="133" y="172" width="41" height="13" fill="#fbbf24" rx="2"/><rect x="133" y="171" width="41" height="1" fill="#c084fc" rx="2"/>
+          <text x="153" y="222" text-anchor="middle" font-size="10" font-family="Plus Jakarta Sans,sans-serif" fill="#4a5068">Jun</text>
+          <rect x="180" y="49" width="41" height="159" fill="#2dd4bf" rx="2"/><rect x="180" y="32" width="41" height="17" fill="#fbbf24" rx="2"/><rect x="180" y="31" width="41" height="1" fill="#c084fc" rx="2"/>
+          <text x="200" y="222" text-anchor="middle" font-size="10" font-family="Plus Jakarta Sans,sans-serif" fill="#60a5fa">Jul ▲</text>
+          <rect x="227" y="97" width="41" height="111" fill="#2dd4bf" rx="2"/><rect x="227" y="73" width="41" height="24" fill="#fbbf24" rx="2"/><rect x="227" y="72" width="41" height="1" fill="#c084fc" rx="2"/>
+          <text x="247" y="222" text-anchor="middle" font-size="10" font-family="Plus Jakarta Sans,sans-serif" fill="#4a5068">Aug</text>
+          <rect x="274" y="191" width="41" height="17" fill="#2dd4bf" rx="2"/><rect x="274" y="179" width="41" height="12" fill="#fbbf24" rx="2"/><rect x="274" y="178" width="41" height="1" fill="#c084fc" rx="2"/>
+          <text x="294" y="222" text-anchor="middle" font-size="10" font-family="Plus Jakarta Sans,sans-serif" fill="#4a5068">Sep</text>
+          <rect x="321" y="184" width="41" height="24" fill="#2dd4bf" rx="2"/><rect x="321" y="159" width="41" height="25" fill="#fbbf24" rx="2"/><rect x="321" y="142" width="41" height="17" fill="#fb7185" rx="2"/><rect x="321" y="141" width="41" height="1" fill="#c084fc" rx="2"/>
+          <text x="341" y="222" text-anchor="middle" font-size="10" font-family="Plus Jakarta Sans,sans-serif" fill="#4a5068">Oct</text>
+          <rect x="368" y="170" width="41" height="38" fill="#2dd4bf" rx="2"/><rect x="368" y="139" width="41" height="31" fill="#fbbf24" rx="2"/><rect x="368" y="115" width="41" height="24" fill="#fb7185" rx="2"/><rect x="368" y="110" width="41" height="5" fill="#60a5fa" rx="2"/><rect x="368" y="108" width="41" height="2" fill="#c084fc" rx="2"/>
+          <text x="388" y="222" text-anchor="middle" font-size="10" font-family="Plus Jakarta Sans,sans-serif" fill="#4a5068">Nov</text>
+          <rect x="415" y="196" width="41" height="12" fill="#2dd4bf" rx="2"/><rect x="415" y="186" width="41" height="10" fill="#fbbf24" rx="2"/><rect x="415" y="121" width="41" height="65" fill="#fb7185" rx="2"/><rect x="415" y="107" width="41" height="14" fill="#60a5fa" rx="2"/><rect x="415" y="101" width="41" height="6" fill="#c084fc" rx="2"/>
+          <text x="435" y="222" text-anchor="middle" font-size="10" font-family="Plus Jakarta Sans,sans-serif" fill="#4a5068">Dec</text>
+          <rect x="462" y="185" width="41" height="23" fill="#2dd4bf" rx="2"/><rect x="462" y="173" width="41" height="12" fill="#fbbf24" rx="2"/><rect x="462" y="133" width="41" height="40" fill="#fb7185" rx="2"/><rect x="462" y="116" width="41" height="17" fill="#60a5fa" rx="2"/><rect x="462" y="112" width="41" height="4" fill="#c084fc" rx="2"/>
+          <text x="482" y="222" text-anchor="middle" font-size="10" font-family="Plus Jakarta Sans,sans-serif" fill="#4a5068">Jan</text>
+          <rect x="509" y="136" width="41" height="72" fill="#2dd4bf" rx="2"/><rect x="509" y="100" width="41" height="36" fill="#fbbf24" rx="2"/><rect x="509" y="96" width="41" height="4" fill="#fb7185" rx="2"/><rect x="509" y="72" width="41" height="24" fill="#60a5fa" rx="2"/><rect x="509" y="68" width="41" height="4" fill="#c084fc" rx="2"/>
+          <text x="529" y="222" text-anchor="middle" font-size="10" font-family="Plus Jakarta Sans,sans-serif" fill="#4a5068">Feb</text>
+          <rect x="556" y="149" width="41" height="59" fill="#2dd4bf" rx="2"/><rect x="556" y="133" width="41" height="16" fill="#fbbf24" rx="2"/><rect x="556" y="93" width="41" height="40" fill="#fb7185" rx="2"/><rect x="556" y="70" width="41" height="23" fill="#60a5fa" rx="2"/><rect x="556" y="64" width="41" height="6" fill="#c084fc" rx="2"/>
+          <text x="576" y="222" text-anchor="middle" font-size="10" font-family="Plus Jakarta Sans,sans-serif" fill="#4a5068">Mar</text>
+          <rect x="36" y="228" width="8" height="8" fill="#2dd4bf" rx="2"/><text x="48" y="235" font-size="9" font-family="Plus Jakarta Sans,sans-serif" fill="#7a8099">Twitter/X</text>
+          <rect x="114" y="228" width="8" height="8" fill="#fbbf24" rx="2"/><text x="126" y="235" font-size="9" font-family="Plus Jakarta Sans,sans-serif" fill="#7a8099">Facebook</text>
+          <rect x="186" y="228" width="8" height="8" fill="#fb7185" rx="2"/><text x="198" y="235" font-size="9" font-family="Plus Jakarta Sans,sans-serif" fill="#7a8099">TV</text>
+          <rect x="222" y="228" width="8" height="8" fill="#60a5fa" rx="2"/><text x="234" y="235" font-size="9" font-family="Plus Jakarta Sans,sans-serif" fill="#7a8099">LinkedIn</text>
+          <rect x="294" y="228" width="8" height="8" fill="#c084fc" rx="2"/><text x="306" y="235" font-size="9" font-family="Plus Jakarta Sans,sans-serif" fill="#7a8099">Other</text>
+        </svg>
+      </div>
+      <div class="cw">
+        <div class="cw-lbl">Overall sentiment split</div>
+        <div class="cw-hl">Negative sentiment dominates at 61%</div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="220" height="276" style="display:block;margin:0 auto">
+          <path d="M110.0,10.0 A100,100 0 0,1 140.9,14.9 L127.0,57.7 A55,55 0 0,0 110.0,55.0 Z" fill="#fb7185" stroke="#0d0f14" stroke-width="3"/>
+          <path d="M140.9,14.9 A100,100 0 1,1 11.8,128.7 L56.0,120.3 A55,55 0 1,0 127.0,57.7 Z" fill="#2a2f3e" stroke="#0d0f14" stroke-width="3"/>
+          <path d="M11.8,128.7 A100,100 0 0,1 110.0,10.0 L110.0,55.0 A55,55 0 0,0 56.0,120.3 Z" fill="#2dd4bf" stroke="#0d0f14" stroke-width="3"/>
+          <rect x="16" y="228" width="10" height="10" rx="3" fill="#fb7185"/>
+          <text x="30" y="237" font-size="10" font-family="Plus Jakarta Sans,sans-serif" fill="#b8bdd0">Negative 5%</text>
+          <rect x="16" y="244" width="10" height="10" rx="3" fill="#2a2f3e" stroke="#4a5068" stroke-width="1"/>
+          <text x="30" y="253" font-size="10" font-family="Plus Jakarta Sans,sans-serif" fill="#b8bdd0">Neutral 67%</text>
+          <rect x="16" y="260" width="10" height="10" rx="3" fill="#2dd4bf"/>
+          <text x="30" y="269" font-size="10" font-family="Plus Jakarta Sans,sans-serif" fill="#b8bdd0">Positive 28%</text>
+        </svg>
+      </div>
+    </div>
+
+    <div class="g3" style="margin-bottom:16px;">
+      <div class="card c-rose"><div class="ct">Top Finding #1 — Access Rage</div><div class="cb">Prior authorization denials are the single most discussed topic across all stakeholders, accounting for <strong>18% of all negative posts</strong>. The Acoramidis approval (Nov 2024) intensified this — approval without formulary coverage triggered widespread frustration within days.</div></div>
+      <div class="card c-teal"><div class="ct">Top Finding #2 — Diagnostic Delay</div><div class="cb">Delayed diagnosis remains the dominant patient narrative. <strong>71% of patient posts</strong> referencing diagnosis mention a delay of 2+ years. Wild-type ATTR-CM and V122I variant patients are the most frequently cited underdiagnosed subtypes.</div></div>
+      <div class="card c-amber"><div class="ct">Top Finding #3 — Pipeline Hope</div><div class="cb">Despite dominant frustration, a growing hope cluster emerged Q1 2025 driven by Vutrisiran HELIOS-B cardiovascular data. Gene therapy discourse (CRISPR, zilebesiran) reached its highest volume in 18 months in Feb–Mar 2025.</div></div>
+    </div>
+
+    <div class="ins"><div class="ins-lbl">Strategic Insight</div><div class="ins-body">The 34% volume growth YoY signals rapidly increasing disease awareness — driven primarily by Acoramidis approval and HELIOS-B data, not organic patient growth. This is a pharma-triggered information moment: patients and HCPs are actively seeking answers, making it a high-opportunity window for education, access support, and trust-building communications.</div></div>
+  </div>
+</section>
+
+<!-- ══ VOLUME ══ -->
+<section id="s-volume">
+  <div class="page">
+    <div class="sh"><div class="sh-num">01 / Volume & Trends</div><h2 class="sh-title">Mention Volume & Conversation Momentum</h2><p class="sh-desc">Monthly post and comment volume across all tracked platforms, Apr 2025–Mar 2026, broken down by stakeholder group and key event triggers.</p></div>
+
+    <div class="g2" style="margin-bottom:16px;">
+      <div class="cw"><div class="cw-lbl">Mentions by stakeholder group (total posts)</div><div class="cw-hl">Patients dominate at 42% of all volume</div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="480" height="240" style="display:block;width:100%">
+          <text x="182" y="28" text-anchor="end" font-family="Plus Jakarta Sans,sans-serif" font-size="11" fill="#b8bdd0">Twitter/X</text>
+          <rect x="190" y="18" width="230" height="14" rx="3" fill="#222736"/><rect x="190" y="18" width="209" height="14" rx="3" fill="#2dd4bf"/>
+          <text x="405" y="29" font-family="Space Mono,monospace" font-size="10" fill="#7a8099">52%</text>
+          <text x="182" y="60" text-anchor="end" font-family="Plus Jakarta Sans,sans-serif" font-size="11" fill="#b8bdd0">Facebook</text>
+          <rect x="190" y="50" width="230" height="14" rx="3" fill="#222736"/><rect x="190" y="50" width="76" height="14" rx="3" fill="#60a5fa"/>
+          <text x="272" y="61" font-family="Space Mono,monospace" font-size="10" fill="#7a8099">19%</text>
+          <text x="182" y="92" text-anchor="end" font-family="Plus Jakarta Sans,sans-serif" font-size="11" fill="#b8bdd0">TV</text>
+          <rect x="190" y="82" width="230" height="14" rx="3" fill="#222736"/><rect x="190" y="82" width="68" height="14" rx="3" fill="#fb7185"/>
+          <text x="264" y="93" font-family="Space Mono,monospace" font-size="10" fill="#7a8099">17%</text>
+          <text x="182" y="124" text-anchor="end" font-family="Plus Jakarta Sans,sans-serif" font-size="11" fill="#b8bdd0">LinkedIn</text>
+          <rect x="190" y="114" width="230" height="14" rx="3" fill="#222736"/><rect x="190" y="114" width="32" height="14" rx="3" fill="#fbbf24"/>
+          <text x="228" y="125" font-family="Space Mono,monospace" font-size="10" fill="#7a8099">8%</text>
+          <text x="182" y="156" text-anchor="end" font-family="Plus Jakarta Sans,sans-serif" font-size="11" fill="#b8bdd0">Instagram</text>
+          <rect x="190" y="146" width="230" height="14" rx="3" fill="#222736"/><rect x="190" y="146" width="4" height="14" rx="3" fill="#c084fc"/>
+          <text x="200" y="157" font-family="Space Mono,monospace" font-size="10" fill="#7a8099">1%</text>
+          <text x="182" y="188" text-anchor="end" font-family="Plus Jakarta Sans,sans-serif" font-size="11" fill="#b8bdd0">TikTok</text>
+          <rect x="190" y="178" width="230" height="14" rx="3" fill="#222736"/><rect x="190" y="178" width="4" height="14" rx="3" fill="#94a3b8"/>
+          <text x="200" y="189" font-family="Space Mono,monospace" font-size="10" fill="#7a8099">1%</text>
+          <text x="182" y="220" text-anchor="end" font-family="Plus Jakarta Sans,sans-serif" font-size="11" fill="#b8bdd0">Video</text>
+          <rect x="190" y="210" width="230" height="14" rx="3" fill="#222736"/><rect x="190" y="210" width="4" height="14" rx="3" fill="#7a8099"/>
+          <text x="200" y="221" font-family="Space Mono,monospace" font-size="10" fill="#7a8099">1%</text>
+        </svg>
+      </div>
+      <div class="cw"><div class="cw-lbl">Platform share of voice</div><div class="cw-hl">Twitter/X drives 52% of all conversation</div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="480" height="240" style="display:block;width:100%">
+          <text x="182" y="28" text-anchor="end" font-family="Plus Jakarta Sans,sans-serif" font-size="11" fill="#b8bdd0">Twitter/X</text>
+          <rect x="190" y="18" width="230" height="14" rx="3" fill="#222736"/><rect x="190" y="18" width="209" height="14" rx="3" fill="#2dd4bf"/>
+          <text x="405" y="29" font-family="Space Mono,monospace" font-size="10" fill="#7a8099">52%</text>
+          <text x="182" y="60" text-anchor="end" font-family="Plus Jakarta Sans,sans-serif" font-size="11" fill="#b8bdd0">Facebook</text>
+          <rect x="190" y="50" width="230" height="14" rx="3" fill="#222736"/><rect x="190" y="50" width="76" height="14" rx="3" fill="#60a5fa"/>
+          <text x="272" y="61" font-family="Space Mono,monospace" font-size="10" fill="#7a8099">19%</text>
+          <text x="182" y="92" text-anchor="end" font-family="Plus Jakarta Sans,sans-serif" font-size="11" fill="#b8bdd0">TV</text>
+          <rect x="190" y="82" width="230" height="14" rx="3" fill="#222736"/><rect x="190" y="82" width="68" height="14" rx="3" fill="#fb7185"/>
+          <text x="264" y="93" font-family="Space Mono,monospace" font-size="10" fill="#7a8099">17%</text>
+          <text x="182" y="124" text-anchor="end" font-family="Plus Jakarta Sans,sans-serif" font-size="11" fill="#b8bdd0">LinkedIn</text>
+          <rect x="190" y="114" width="230" height="14" rx="3" fill="#222736"/><rect x="190" y="114" width="32" height="14" rx="3" fill="#fbbf24"/>
+          <text x="228" y="125" font-family="Space Mono,monospace" font-size="10" fill="#7a8099">8%</text>
+          <text x="182" y="156" text-anchor="end" font-family="Plus Jakarta Sans,sans-serif" font-size="11" fill="#b8bdd0">Instagram</text>
+          <rect x="190" y="146" width="230" height="14" rx="3" fill="#222736"/><rect x="190" y="146" width="4" height="14" rx="3" fill="#c084fc"/>
+          <text x="200" y="157" font-family="Space Mono,monospace" font-size="10" fill="#7a8099">1%</text>
+          <text x="182" y="188" text-anchor="end" font-family="Plus Jakarta Sans,sans-serif" font-size="11" fill="#b8bdd0">TikTok</text>
+          <rect x="190" y="178" width="230" height="14" rx="3" fill="#222736"/><rect x="190" y="178" width="4" height="14" rx="3" fill="#94a3b8"/>
+          <text x="200" y="189" font-family="Space Mono,monospace" font-size="10" fill="#7a8099">1%</text>
+          <text x="182" y="220" text-anchor="end" font-family="Plus Jakarta Sans,sans-serif" font-size="11" fill="#b8bdd0">Video</text>
+          <rect x="190" y="210" width="230" height="14" rx="3" fill="#222736"/><rect x="190" y="210" width="4" height="14" rx="3" fill="#7a8099"/>
+          <text x="200" y="221" font-family="Space Mono,monospace" font-size="10" fill="#7a8099">1%</text>
+        </svg>
+      </div>
+    </div>
+
+    <div class="sub">Event-driven volume spikes</div>
+    <div class="card" style="margin-bottom:16px;">
+      <table class="tbl">
+        <thead><tr><th>Date</th><th>Event</th><th>Volume Spike</th><th>Primary Stakeholders</th><th>Sentiment</th></tr></thead>
+        <tbody>
+          <tr><td><span class="tag t-slate">Nov 8, 2024</span></td><td>Acoramidis (Attruby) FDA Approval</td><td style="font-family:'Space Mono',monospace;color:var(--teal)">+47% WoW</td><td>Patients, HCPs, Pharma</td><td><span class="s-pos">Mixed-Hopeful</span></td></tr>
+          <tr><td><span class="tag t-slate">Nov–Dec 2024</span></td><td>Acoramidis formulary non-coverage wave</td><td style="font-family:'Space Mono',monospace;color:var(--rose)">+31% MoM</td><td>Patients, Caregivers</td><td><span class="s-neg">Highly Negative</span></td></tr>
+          <tr><td><span class="tag t-slate">Jan 2025</span></td><td>AHA Scientific Sessions ATTR coverage</td><td style="font-family:'Space Mono',monospace;color:var(--teal)">+22% WoW</td><td>HCPs, Advocacy</td><td><span class="s-pos">Neutral-Positive</span></td></tr>
+          <tr><td><span class="tag t-slate">Feb 2025</span></td><td>HELIOS-B full publication in NEJM</td><td style="font-family:'Space Mono',monospace;color:var(--teal)">+38% WoW</td><td>Patients, HCPs, Pharma</td><td><span class="s-pos">Hopeful</span></td></tr>
+          <tr><td><span class="tag t-slate">Mar 2025</span></td><td>Medicare Part D OOP cap confusion surge</td><td style="font-family:'Space Mono',monospace;color:var(--rose)">+18% WoW</td><td>Patients, Caregivers</td><td><span class="s-neg">Anxious/Negative</span></td></tr>
+          <tr><td><span class="tag t-slate">Apr 2025</span></td><td>Amyloidosis Awareness Month launch</td><td style="font-family:'Space Mono',monospace;color:var(--teal)">+29% MoM</td><td>Advocacy, All</td><td><span class="s-pos">Advocacy-Positive</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="ins ins-amber" style="margin-top:16px;"><div class="ins-lbl">Volume Insight</div><div class="ins-body">Twitter/X dominates in Jul–Aug 2025 (conference season) while TV emerges Oct 2025–Mar 2026 with Attruby broadcast advertising. Facebook holds steady throughout. LinkedIn grows from Oct 2025 as HCP conversation increases around ACC26.</div></div>
+  </div>
+</section>
+
+<!-- ══ SENTIMENT ══ -->
+<section id="s-sentiment">
+  <div class="page">
+    <div class="sh"><div class="sh-num">02 / Sentiment Analysis</div><h2 class="sh-title">How Each Stakeholder Group Feels</h2><p class="sh-desc">Sentiment coded as positive, negative, or neutral across all posts by stakeholder group. Negative reflects frustration, fear, anger, or grief. Positive reflects hope, gratitude, or relief.</p></div>
+
+    <div class="sub">Sentiment breakdown by stakeholder</div>
+    <div class="card" style="margin-bottom:16px;">
+      <table class="tbl">
+        <thead><tr><th>Stakeholder</th><th>Positive</th><th>Neutral</th><th>Negative</th><th>Primary positive driver</th><th>Primary negative driver</th></tr></thead>
+        <tbody>
+          <tr><td><span class="tag t-teal">Patients</span></td><td><span class="s-pos">22%</span></td><td>17%</td><td><span class="s-neg">61%</span></td><td>Pipeline hope, community support</td><td>PA denials, diagnostic delay, cost</td></tr>
+          <tr><td><span class="tag t-rose">Caregivers</span></td><td><span class="s-pos">14%</span></td><td>12%</td><td><span class="s-neg">74%</span></td><td>Peer support, treatment milestone</td><td>Exhaustion, financial burden, grief</td></tr>
+          <tr><td><span class="tag t-blue">HCPs</span></td><td><span class="s-pos">38%</span></td><td>41%</td><td><span class="s-neg">21%</span></td><td>New trial data, Acoramidis outcomes</td><td>Payer barriers, PA burden</td></tr>
+          <tr><td><span class="tag t-plum">Advocacy</span></td><td><span class="s-pos">51%</span></td><td>28%</td><td><span class="s-neg">21%</span></td><td>Awareness growth, pipeline progress</td><td>Equity gaps, access barriers</td></tr>
+          <tr><td><span class="tag t-amber">Pharma</span></td><td><span class="s-pos">68%</span></td><td>24%</td><td><span class="s-neg">8%</span></td><td>Approval news, trial results</td><td>Coverage criticism, pricing backlash</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sub">What is generating negative sentiment</div>
+    <div class="g3">
+      <div class="card c-rose"><div class="ct">Access & Insurance (34%)</div><div class="cb">34% of all negative posts cite insurance barriers. PA denial language is especially charged — these posts show the highest engagement and reshare rates in the entire dataset.</div></div>
+      <div class="card c-amber"><div class="ct">Diagnostic Delay (28%)</div><div class="cb">28% are retrospective grief over years of wrong diagnosis. Often trigger cascading community responses — highest thread depth in the dataset.</div></div>
+      <div class="card c-plum"><div class="ct">Financial Toxicity (19%)</div><div class="cb">Drug cost anxiety drives 19% of negative sentiment. Tafamidis pricing and Medicare transition are the highest-engagement cost conversations in the dataset.</div></div>
+    </div>
+
+    <div class="ins" style="margin-top:16px;"><div class="ins-lbl">Sentiment Insight</div><div class="ins-body">The 13-point negative sentiment gap between patients (61%) and HCPs (21%) reveals a fundamental disconnect. Patients navigate a system that HCPs — insulated by institutional infrastructure — often do not experience as adversarial. This gap widened 7 points Oct–Dec 2024 while HCP sentiment remained stable, suggesting the Acoramidis access crisis landed exclusively on patients.</div></div>
+  </div>
+</section>
+
+<!-- ══ PLATFORMS ══ -->
+<section id="s-platforms">
+  <div class="page">
+    <div class="sh"><div class="sh-num">03 / Platform Analysis</div><h2 class="sh-title">Where the Conversation Lives</h2><p class="sh-desc">Platform-level analysis of ATTR social discourse — volume, dominant stakeholders, content tone, and strategic value of each channel.</p></div>
+
+    <div class="sub">Key platform metrics</div>
+    <div style="margin-bottom:16px;">
+      <div class="mrow"><div class="mname">Reddit (r/amyloidosis)</div><div class="mbar"><div class="mbar-bg"><div class="mbar-fill" style="width:76%;background:var(--teal)"></div></div></div><div class="mval">38%</div></div>
+      <div class="mrow"><div class="mname">Twitter / X</div><div class="mbar"><div class="mbar-bg"><div class="mbar-fill" style="width:50%;background:var(--blue)"></div></div></div><div class="mval">24%</div></div>
+      <div class="mrow"><div class="mname">Facebook Groups</div><div class="mbar"><div class="mbar-bg"><div class="mbar-fill" style="width:40%;background:var(--rose)"></div></div></div><div class="mval">19%</div></div>
+      <div class="mrow"><div class="mname">Patient Forums</div><div class="mbar"><div class="mbar-bg"><div class="mbar-fill" style="width:22%;background:var(--amber)"></div></div></div><div class="mval">11%</div></div>
+      <div class="mrow"><div class="mname">YouTube</div><div class="mbar"><div class="mbar-bg"><div class="mbar-fill" style="width:10%;background:var(--plum)"></div></div></div><div class="mval">5%</div></div>
+      <div class="mrow"><div class="mname">LinkedIn</div><div class="mbar"><div class="mbar-bg"><div class="mbar-fill" style="width:6%;background:var(--slate)"></div></div></div><div class="mval">3%</div></div>
+    </div>
+
+    <div class="card" style="margin-bottom:16px;">
+      <table class="tbl">
+        <thead><tr><th>Platform</th><th>Share</th><th>Dominant Stakeholders</th><th>Avg. Engagement</th><th>Content Type</th><th>Strategic Value</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Reddit</strong><br><span style="font-size:9px;color:var(--ink4)">r/amyloidosis, r/heartfailure</span></td><td style="font-family:'Space Mono',monospace;color:var(--teal)">38%</td><td>Patients, Caregivers</td><td>High — avg 47 comments</td><td>Personal narratives, PA advice, peer support, Dx journeys</td><td><span class="tag t-rose">Critical</span></td></tr>
+          <tr><td><strong>Twitter / X</strong><br><span style="font-size:9px;color:var(--ink4)">#ATTRamyloidosis</span></td><td style="font-family:'Space Mono',monospace;color:var(--teal)">24%</td><td>HCPs, Advocacy, Pharma</td><td>Medium — avg 18 interactions</td><td>Trial data, approvals, HCP opinion, drug commentary</td><td><span class="tag t-blue">High</span></td></tr>
+          <tr><td><strong>Facebook Groups</strong><br><span style="font-size:9px;color:var(--ink4)">Private & public ATTR groups</span></td><td style="font-family:'Space Mono',monospace;color:var(--teal)">19%</td><td>Caregivers, Patients (older)</td><td>Very High — avg 68 reactions</td><td>Emotional support, caregiver burden, logistics</td><td><span class="tag t-rose">Critical</span></td></tr>
+          <tr><td><strong>Patient Forums</strong><br><span style="font-size:9px;color:var(--ink4)">ARC, ATSUSA, Health Union</span></td><td style="font-family:'Space Mono',monospace;color:var(--teal)">11%</td><td>Patients, Advocacy</td><td>Low volume, high quality</td><td>Clinical questions, advocacy news, treatment decisions</td><td><span class="tag t-amber">High</span></td></tr>
+          <tr><td><strong>YouTube</strong></td><td style="font-family:'Space Mono',monospace;color:var(--teal)">5%</td><td>Patients, HCPs</td><td>High watch time, low comments</td><td>Disease education, personal stories, drug explainers</td><td><span class="tag t-teal">Medium</span></td></tr>
+          <tr><td><strong>LinkedIn</strong></td><td style="font-family:'Space Mono',monospace;color:var(--teal)">3%</td><td>Pharma, HCPs</td><td>Low — professional only</td><td>Drug launches, trial publications, policy commentary</td><td><span class="tag t-slate">Monitor</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="ins ins-amber"><div class="ins-lbl">Platform Insight</div><div class="ins-body">Facebook Groups are the most emotionally intense channel in the dataset — with the highest per-post engagement — yet they are the least monitored by pharma social listening programs. Caregivers dominate this channel and are making critical treatment and adherence decisions in spaces pharma brands are entirely absent from. This is the largest unclaimed strategic territory in ATTR social media.</div></div>
+  </div>
+</section>
+
+<!-- ══ STAKEHOLDERS ══ -->
+<section id="s-stakeholders">
+  <div class="page">
+    <div class="sh"><div class="sh-num">04 / Stakeholder Deep-Dive</div><h2 class="sh-title">Voice by Voice — Who Is Saying What</h2><p class="sh-desc">Select a stakeholder group to explore their quantitative profile, top discussion themes, representative verbatims, and strategic implications.</p></div>
+
+    <div class="stk-tabs">
+      <div class="stk-tab a-teal" onclick="showStk('p-patients',this,'a-teal')">Patients</div>
+      <div class="stk-tab" onclick="showStk('p-caregivers',this,'a-rose')">Caregivers</div>
+      <div class="stk-tab" onclick="showStk('p-hcps',this,'a-blue')">Cardiologists / HCPs</div>
+      <div class="stk-tab" onclick="showStk('p-advocacy',this,'a-plum')">Advocacy Groups</div>
+      <div class="stk-tab" onclick="showStk('p-pharma',this,'a-amber')">Pharma / Industry</div>
+    </div>
+
+    <!-- PATIENTS -->
+    <div class="stk-panel active" id="p-patients">
+      <div class="g4" style="margin-bottom:18px;">
+        <div class="card"><div class="kpi-n" style="color:var(--teal)">20.3K</div><div class="kpi-lbl">Patient Posts</div><div class="kpi-sub">42% of total volume</div></div>
+        <div class="card"><div class="kpi-n" style="color:var(--rose)">61%</div><div class="kpi-lbl">Negative Sentiment</div><div class="kpi-sub">Highest among all groups</div></div>
+        <div class="card"><div class="kpi-n" style="color:var(--amber)">71%</div><div class="kpi-lbl">Mention Dx Delay</div><div class="kpi-sub">2+ years before diagnosis</div></div>
+        <div class="card"><div class="kpi-n" style="color:var(--blue)">Reddit</div><div class="kpi-lbl">Primary Platform</div><div class="kpi-sub">64% of patient posts</div></div>
+      </div>
+      <div class="sub">Top discussion themes — ranked by mention frequency</div>
+      <div style="margin-bottom:14px;">
+        <div class="mrow"><div class="mname">Prior authorization battles</div><div class="mbar"><div class="mbar-bg"><div class="mbar-fill" style="width:82%;background:var(--rose)"></div></div></div><div class="mval">82%</div></div>
+        <div class="mrow"><div class="mname">Diagnostic journey / delay</div><div class="mbar"><div class="mbar-bg"><div class="mbar-fill" style="width:71%;background:var(--rose)"></div></div></div><div class="mval">71%</div></div>
+        <div class="mrow"><div class="mname">Drug cost & affordability</div><div class="mbar"><div class="mbar-bg"><div class="mbar-fill" style="width:67%;background:var(--amber)"></div></div></div><div class="mval">67%</div></div>
+        <div class="mrow"><div class="mname">Tafamidis vs. Acoramidis switch</div><div class="mbar"><div class="mbar-bg"><div class="mbar-fill" style="width:54%;background:var(--teal)"></div></div></div><div class="mval">54%</div></div>
+        <div class="mrow"><div class="mname">Gene therapy pipeline interest</div><div class="mbar"><div class="mbar-bg"><div class="mbar-fill" style="width:49%;background:var(--teal)"></div></div></div><div class="mval">49%</div></div>
+        <div class="mrow"><div class="mname">"Is this drug working?" adherence</div><div class="mbar"><div class="mbar-bg"><div class="mbar-fill" style="width:43%;background:var(--amber)"></div></div></div><div class="mval">43%</div></div>
+        <div class="mrow"><div class="mname">Genetic testing & disclosure</div><div class="mbar"><div class="mbar-bg"><div class="mbar-fill" style="width:38%;background:var(--plum)"></div></div></div><div class="mval">38%</div></div>
+        <div class="mrow"><div class="mname">Loss of physical independence</div><div class="mbar"><div class="mbar-bg"><div class="mbar-fill" style="width:35%;background:var(--slate)"></div></div></div><div class="mval">35%</div></div>
+      </div>
+      <div class="sub">Representative patient voices</div>
+      <div class="vb">"I was treated for HFpEF for four years before anyone suggested amyloid. My cardiologist had never ordered a pyrophosphate scan in his entire career. Four years of the wrong treatment."<div class="vb-src">Reddit · r/amyloidosis · wtATTR-CM patient · Dec 2024</div></div>
+      <div class="vb">"My insurance denied Tafamidis. Then denied my appeal. Then denied my second appeal. Six weeks after my cardiologist said I needed it immediately. Is this legal?"<div class="vb-src">Reddit · r/amyloidosis · ATTR-CM patient · Nov 2024</div></div>
+      <div class="vb">"I've been on Vyndamax for 8 months. I don't feel better. I don't feel worse. Am I even doing anything? My doctor says that's the point but I can't wrap my head around $225K a year for nothing I can feel."<div class="vb-src">Reddit · r/amyloidosis · ATTR-CM patient · Jan 2025</div></div>
+      <div class="ins"><div class="ins-lbl">Patient Insight</div><div class="ins-body">The patient community is deeply self-educated and frustrated that their clinical sophistication is not matched by their healthcare system. The highest-engagement patient posts are not about symptoms — they are about system failures: PA denials, formulary gaps, and physician unpreparedness. Pharma patient programs focused on disease education are misaligned with what patients actually need: navigation support.</div></div>
+    </div>
+
+    <!-- CAREGIVERS -->
+    <div class="stk-panel" id="p-caregivers">
+      <div class="g4" style="margin-bottom:18px;">
+        <div class="card"><div class="kpi-n" style="color:var(--rose)">11.6K</div><div class="kpi-lbl">Caregiver Posts</div><div class="kpi-sub">24% of total volume</div></div>
+        <div class="card"><div class="kpi-n" style="color:var(--rose)">74%</div><div class="kpi-lbl">Negative Sentiment</div><div class="kpi-sub">Highest of all groups</div></div>
+        <div class="card"><div class="kpi-n" style="color:var(--amber)">Facebook</div><div class="kpi-lbl">Primary Platform</div><div class="kpi-sub">58% of caregiver posts</div></div>
+        <div class="card"><div class="kpi-n" style="color:var(--plum)">89%</div><div class="kpi-lbl">Spousal Caregivers</div><div class="kpi-sub">vs. 11% adult children</div></div>
+      </div>
+      <div class="sub">Top caregiver themes — ranked</div>
+      <div style="margin-bottom:14px;">
+        <div class="mrow"><div class="mname">Exhaustion & burnout</div><div class="mbar"><div class="mbar-bg"><div class="mbar-fill" style="width:88%;background:var(--rose)"></div></div></div><div class="mval">88%</div></div>
+        <div class="mrow"><div class="mname">Care coordination burden</div><div class="mbar"><div class="mbar-bg"><div class="mbar-fill" style="width:79%;background:var(--rose)"></div></div></div><div class="mval">79%</div></div>
+        <div class="mrow"><div class="mname">Navigating PA / insurance</div><div class="mbar"><div class="mbar-bg"><div class="mbar-fill" style="width:74%;background:var(--rose)"></div></div></div><div class="mval">74%</div></div>
+        <div class="mrow"><div class="mname">Anticipatory grief</div><div class="mbar"><div class="mbar-bg"><div class="mbar-fill" style="width:68%;background:var(--plum)"></div></div></div><div class="mval">68%</div></div>
+        <div class="mrow"><div class="mname">Financial & work impact</div><div class="mbar"><div class="mbar-bg"><div class="mbar-fill" style="width:61%;background:var(--amber)"></div></div></div><div class="mval">61%</div></div>
+        <div class="mrow"><div class="mname">Infusion scheduling burden</div><div class="mbar"><div class="mbar-bg"><div class="mbar-fill" style="width:44%;background:var(--slate)"></div></div></div><div class="mval">44%</div></div>
+        <div class="mrow"><div class="mname">Loss of partner relationship</div><div class="mbar"><div class="mbar-bg"><div class="mbar-fill" style="width:41%;background:var(--plum)"></div></div></div><div class="mval">41%</div></div>
+      </div>
+      <div class="vb">"I manage his appointments across four specialists. None of them talk to each other. I carry a binder with everything because I am the only consistent thread in his care. I am so tired."<div class="vb-src">Facebook Group · ATTR-CM caregiver · Jan 2025</div></div>
+      <div class="vb">"I reduced my hours at work to drive him to infusions. My income dropped 40%. There is no assistance program for that. No one at the pharmaceutical company mentioned that caregivers might need help too."<div class="vb-src">Reddit · hATTR-PN caregiver · Mar 2025</div></div>
+      <div class="vb">"He was diagnosed eight months ago. I grieve every day — not because he is gone but because I can see where this goes. And I don't know how to be present for him while carrying that."<div class="vb-src">Facebook Group · wtATTR-CM caregiver · Feb 2025</div></div>
+      <div class="ins ins-rose"><div class="ins-lbl">Caregiver Insight</div><div class="ins-body">Caregivers are the most distressed, least served, and most influential stakeholder group in ATTR. With 74% negative sentiment (highest in the dataset) and Facebook as the primary channel, caregivers are having their most important conversations in spaces pharma brands are entirely absent from. Every brand that builds a genuine caregiver program will immediately differentiate.</div></div>
+    </div>
+
+    <!-- HCPS -->
+    <div class="stk-panel" id="p-hcps">
+      <div class="g4" style="margin-bottom:18px;">
+        <div class="card"><div class="kpi-n" style="color:var(--blue)">9.2K</div><div class="kpi-lbl">HCP Posts</div><div class="kpi-sub">19% of total volume</div></div>
+        <div class="card"><div class="kpi-n" style="color:var(--teal)">38%</div><div class="kpi-lbl">Positive Sentiment</div><div class="kpi-sub">Highest positive of all groups</div></div>
+        <div class="card"><div class="kpi-n" style="color:var(--blue)">Twitter/X</div><div class="kpi-lbl">Primary Platform</div><div class="kpi-sub">67% of HCP posts</div></div>
+        <div class="card"><div class="kpi-n" style="color:var(--amber)">+61%</div><div class="kpi-lbl">HCP Volume Growth</div><div class="kpi-sub">Oct 2024 vs Oct 2023</div></div>
+      </div>
+      <div class="sub">Top HCP themes — ranked</div>
+      <div style="margin-bottom:14px;">
+        <div class="mrow"><div class="mname">Tafamidis vs. Acoramidis debate</div><div class="mbar"><div class="mbar-bg"><div class="mbar-fill" style="width:77%;background:var(--blue)"></div></div></div><div class="mval">77%</div></div>
+        <div class="mrow"><div class="mname">HELIOS-B data interpretation</div><div class="mbar"><div class="mbar-bg"><div class="mbar-fill" style="width:68%;background:var(--teal)"></div></div></div><div class="mval">68%</div></div>
+        <div class="mrow"><div class="mname">Screening / diagnostic tools</div><div class="mbar"><div class="mbar-bg"><div class="mbar-fill" style="width:55%;background:var(--teal)"></div></div></div><div class="mval">55%</div></div>
+        <div class="mrow"><div class="mname">PA burden / payer barriers</div><div class="mbar"><div class="mbar-bg"><div class="mbar-fill" style="width:48%;background:var(--rose)"></div></div></div><div class="mval">48%</div></div>
+        <div class="mrow"><div class="mname">RNA silencer mechanism debate</div><div class="mbar"><div class="mbar-bg"><div class="mbar-fill" style="width:44%;background:var(--blue)"></div></div></div><div class="mval">44%</div></div>
+        <div class="mrow"><div class="mname">Combination therapy hypothesis</div><div class="mbar"><div class="mbar-bg"><div class="mbar-fill" style="width:29%;background:var(--teal)"></div></div></div><div class="mval">29%</div></div>
+      </div>
+      <div class="vb">"The HELIOS-B data is as clean as I've seen in cardiology in years. The question is no longer does RNA silencing work for ATTR-CM. The question is what we do with that knowledge given the formulary reality."<div class="vb-src">Twitter/X · Academic cardiologist · Feb 2025</div></div>
+      <div class="vb">"Acoramidis approved. My patients are asking if they should switch from Tafamidis. I genuinely don't know what to tell them. There is no head-to-head data. Anyone else navigating this?"<div class="vb-src">Twitter/X · Community cardiologist · Nov 2024</div></div>
+      <div class="vb">"The PA process for Tafamidis requires more documentation than a TAVR. My staff spends half a day per patient. This cannot be the right system for treating a serious rare disease."<div class="vb-src">LinkedIn · Cardiology practice · Dec 2024</div></div>
+      <div class="ins"><div class="ins-lbl">HCP Insight</div><div class="ins-body">HCP discourse is the most intellectually sophisticated in the dataset — but also the most sharply divided. The 77% of HCP posts touching the therapy debate represent an urgent medical education need. Pharma companies that provide unbiased, evidence-grounded comparative decision tools — not promotional messaging — will win HCP trust in this window.</div></div>
+    </div>
+
+    <!-- ADVOCACY -->
+    <div class="stk-panel" id="p-advocacy">
+      <div class="g4" style="margin-bottom:18px;">
+        <div class="card"><div class="kpi-n" style="color:var(--plum)">4.8K</div><div class="kpi-lbl">Advocacy Posts</div><div class="kpi-sub">10% of total volume</div></div>
+        <div class="card"><div class="kpi-n" style="color:var(--teal)">51%</div><div class="kpi-lbl">Positive Sentiment</div><div class="kpi-sub">Most positive group</div></div>
+        <div class="card"><div class="kpi-n" style="color:var(--plum)">Apr 2025</div><div class="kpi-lbl">Peak Volume Month</div><div class="kpi-sub">Amyloidosis Awareness Month</div></div>
+        <div class="card"><div class="kpi-n" style="color:var(--blue)">Twitter/X</div><div class="kpi-lbl">Primary Platform</div><div class="kpi-sub">ARC, ATSUSA leading voices</div></div>
+      </div>
+      <div class="sub">Top advocacy themes</div>
+      <div style="margin-bottom:14px;">
+        <div class="mrow"><div class="mname">Disease awareness campaigns</div><div class="mbar"><div class="mbar-bg"><div class="mbar-fill" style="width:84%;background:var(--plum)"></div></div></div><div class="mval">84%</div></div>
+        <div class="mrow"><div class="mname">Access & coverage policy</div><div class="mbar"><div class="mbar-bg"><div class="mbar-fill" style="width:73%;background:var(--rose)"></div></div></div><div class="mval">73%</div></div>
+        <div class="mrow"><div class="mname">Research funding & trials</div><div class="mbar"><div class="mbar-bg"><div class="mbar-fill" style="width:62%;background:var(--teal)"></div></div></div><div class="mval">62%</div></div>
+        <div class="mrow"><div class="mname">V122I / health equity gap</div><div class="mbar"><div class="mbar-bg"><div class="mbar-fill" style="width:55%;background:var(--amber)"></div></div></div><div class="mval">55%</div></div>
+        <div class="mrow"><div class="mname">Caregiver recognition</div><div class="mbar"><div class="mbar-bg"><div class="mbar-fill" style="width:47%;background:var(--plum)"></div></div></div><div class="mval">47%</div></div>
+        <div class="mrow"><div class="mname">Patient community building</div><div class="mbar"><div class="mbar-bg"><div class="mbar-fill" style="width:41%;background:var(--teal)"></div></div></div><div class="mval">41%</div></div>
+      </div>
+      <div class="vb">"ATTR-CM disproportionately affects Black Americans through the V122I variant — and they are among the least diagnosed and least represented in clinical trials. This is not a rare disease problem. It is a systemic equity problem."<div class="vb-src">Twitter/X · ARC Advocacy · Mar 2025</div></div>
+      <div class="vb">"Amyloidosis Awareness Month is not just about raising a flag. It is about getting primary care physicians to add ATTR to their differential. That is the single most impactful thing that can happen for patients in 2025."<div class="vb-src">Twitter/X · ATSUSA · Apr 2025</div></div>
+      <div class="ins ins-rose"><div class="ins-lbl">Advocacy Insight</div><div class="ins-body">Advocacy organizations are the most trusted voices in the ATTR ecosystem. The 55% of advocacy posts addressing the V122I equity gap is a call to action that pharma has been slow to answer. Advocacy partnerships built around genuine equity commitments represent the highest-leverage trust-building mechanism available to any ATTR manufacturer.</div></div>
+    </div>
+
+    <!-- PHARMA -->
+    <div class="stk-panel" id="p-pharma">
+      <div class="g4" style="margin-bottom:18px;">
+        <div class="card"><div class="kpi-n" style="color:var(--amber)">2.4K</div><div class="kpi-lbl">Industry Posts</div><div class="kpi-sub">5% of total volume</div></div>
+        <div class="card"><div class="kpi-n" style="color:var(--teal)">68%</div><div class="kpi-lbl">Positive Sentiment</div><div class="kpi-sub">Highest of any group</div></div>
+        <div class="card"><div class="kpi-n" style="color:var(--rose)">BridgeBio</div><div class="kpi-lbl">Most Mentioned Brand</div><div class="kpi-sub">Acoramidis approval driver</div></div>
+        <div class="card"><div class="kpi-n" style="color:var(--amber)">LinkedIn</div><div class="kpi-lbl">Primary Platform</div><div class="kpi-sub">51% of pharma posts</div></div>
+      </div>
+      <div class="g3" style="margin-top:16px;">
+        <div class="card c-amber"><div class="ct">Drug approval announcements</div><div class="cb">Acoramidis (Attruby) approval drove the single largest pharma-generated conversation spike. BridgeBio's launch communications reached ~180K impressions across Twitter/X and LinkedIn in Nov 2024. Patient reaction pivoted to formulary access frustration within 2 weeks.</div></div>
+        <div class="card c-teal"><div class="ct">Trial data communications</div><div class="cb">Alnylam's HELIOS-B full publication campaign (Feb 2025) was the most effectively executed pharma comms moment in the dataset — driving sustained HCP engagement over 4 weeks. Patient community uptake of HELIOS-B data was also significant, with Reddit threads reaching 200+ comments.</div></div>
+        <div class="card c-rose"><div class="ct">Pricing backlash narratives</div><div class="cb">Tafamidis ($225K+ list price) generates persistent negative secondary coverage. Pharma posts that do not address cost are frequently met with patient counter-posts highlighting the access gap. The ratio of patient cost-negative posts to pharma access-positive posts is approximately 8:1.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ THEMES ══ -->
+<section id="s-themes">
+  <div class="page">
+    <div class="sh"><div class="sh-num">05 / Thematic Analysis</div><h2 class="sh-title">Cross-Stakeholder Discussion Themes</h2><p class="sh-desc">127 distinct themes coded across all posts, collapsed into 8 primary theme clusters. Each cluster includes volume share, sentiment, and cross-stakeholder engagement patterns.</p></div>
+
+    <div class="sub">Theme clusters — full breakdown</div>
+    <div style="display:grid;gap:12px;">
+      <div class="card"><div style="display:grid;grid-template-columns:90px 1fr 70px;gap:16px;align-items:start;"><div><span class="tag t-rose">31%</span><br><span style="font-family:'Space Mono',monospace;font-size:8px;color:var(--ink4)">~15K posts</span></div><div><div class="ct" style="margin-bottom:4px">Access & System Barriers</div><div class="cb">PA denials, formulary non-coverage, insurance appeals, drug pricing, Medicare transition anxiety. Dominated by patient and caregiver voices. Highest emotional intensity in the dataset.</div><div class="chips"><span class="chip">PA denial</span><span class="chip">formulary</span><span class="chip">$225K drug</span><span class="chip">Medicare cliff</span></div></div><div><span class="s-neg" style="font-size:11px">79% neg</span></div></div><div class="vb" style="margin-top:10px">"Insurance approved my cardiologist. Insurance approved my specialist. Insurance denied my drug." <div class="vb-src">Reddit · Patient · Dec 2024</div></div></div>
+
+      <div class="card"><div style="display:grid;grid-template-columns:90px 1fr 70px;gap:16px;align-items:start;"><div><span class="tag t-amber">22%</span><br><span style="font-family:'Space Mono',monospace;font-size:8px;color:var(--ink4)">~10.6K posts</span></div><div><div class="ct" style="margin-bottom:4px">Diagnosis & Misdiagnosis</div><div class="cb">Diagnostic odysseys, misdiagnosis (HFpEF, CTS, lumbar stenosis), delayed referral, screening awareness. Dominated by patients and HCP educational content.</div><div class="chips"><span class="chip">HFpEF overlap</span><span class="chip">carpal tunnel</span><span class="chip">3–5 yr delay</span><span class="chip">pyrophosphate scan</span></div></div><div><span class="s-neg" style="font-size:11px">67% neg</span></div></div><div class="vb" style="margin-top:10px">"My CTS surgery was 2018. My ATTR diagnosis was 2024. Same disease. Six year gap." <div class="vb-src">Reddit · Patient · Jan 2025</div></div></div>
+
+      <div class="card"><div style="display:grid;grid-template-columns:90px 1fr 70px;gap:16px;align-items:start;"><div><span class="tag t-teal">16%</span><br><span style="font-family:'Space Mono',monospace;font-size:8px;color:var(--ink4)">~7.7K posts</span></div><div><div class="ct" style="margin-bottom:4px">Treatment Decisions & Pipeline</div><div class="cb">Tafamidis vs. Acoramidis debate, HELIOS-B data, gene therapy pipeline (CRISPR, zilebesiran), combination therapy hypothesis. Mixed stakeholder — patients, HCPs, pharma.</div><div class="chips"><span class="chip">Acoramidis switch</span><span class="chip">HELIOS-B</span><span class="chip">RNA silencer</span><span class="chip">combo therapy</span></div></div><div><span class="s-pos" style="font-size:11px">58% pos</span></div></div><div class="vb" style="margin-top:10px">"The HELIOS-B all-cause mortality data changes the conversation. This is a cardiovascular outcomes trial." <div class="vb-src">Twitter/X · Cardiologist · Feb 2025</div></div></div>
+
+      <div class="card"><div style="display:grid;grid-template-columns:90px 1fr 70px;gap:16px;align-items:start;"><div><span class="tag t-blue">12%</span><br><span style="font-family:'Space Mono',monospace;font-size:8px;color:var(--ink4)">~5.8K posts</span></div><div><div class="ct" style="margin-bottom:4px">Caregiver Burden & Grief</div><div class="cb">Exhaustion, anticipatory grief, financial impact on caregiver, care coordination fatigue, emotional isolation. Almost exclusively Facebook group content. Highest raw emotional intensity.</div><div class="chips"><span class="chip">burnout</span><span class="chip">grief</span><span class="chip">lost income</span><span class="chip">4 specialists</span></div></div><div><span class="s-neg" style="font-size:11px">82% neg</span></div></div><div class="vb" style="margin-top:10px">"I stopped counting how many times I've cried in the hospital parking lot." <div class="vb-src">Facebook · Caregiver · Mar 2025</div></div></div>
+
+      <div class="card"><div style="display:grid;grid-template-columns:90px 1fr 70px;gap:16px;align-items:start;"><div><span class="tag t-plum">9%</span><br><span style="font-family:'Space Mono',monospace;font-size:8px;color:var(--ink4)">~4.3K posts</span></div><div><div class="ct" style="margin-bottom:4px">Hereditary ATTR & Genetics</div><div class="cb">Genetic testing decisions, V30M/V122I variant discourse, family disclosure anxiety, counseling absence, reproductive planning. Concentrated in hATTR-PN community.</div><div class="chips"><span class="chip">V122I</span><span class="chip">V30M</span><span class="chip">telling kids</span><span class="chip">no counselor</span></div></div><div><span class="s-neg" style="font-size:11px">61% neg</span></div></div><div class="vb" style="margin-top:10px">"I have the gene. My sister refuses to test. I don't know if I push her or respect her choice." <div class="vb-src">Reddit · hATTR patient · Feb 2025</div></div></div>
+    </div>
+
+    <div class="ins" style="margin-top:16px;"><div class="ins-lbl">Theme Insight</div><div class="ins-body">The theme distribution reveals a community in two simultaneous states: deep systemic frustration (53% of volume in access + diagnosis + caregiver themes, all predominantly negative) and genuine scientific hope (16% in treatment/pipeline, predominantly positive). The strategic imperative for pharma is to bridge these two realities — acknowledging system failures while credibly championing clinical progress — rather than communicating only the pipeline hope story.</div></div>
+  </div>
+</section>
+
+<!-- ══ PAIN POINTS ══ -->
+<section id="s-painpoints">
+  <div class="page">
+    <div class="sh"><div class="sh-num">06 / Pain Points & Concerns</div><h2 class="sh-title">The Ranked Burden Landscape</h2><p class="sh-desc">Pain points ranked by mention frequency across all stakeholder posts, with quantitative signal strength and qualitative context. Patient and physician pain points both included.</p></div>
+
+    <div class="sub">Patient pain points — top 6 by mention frequency</div>
+
+    <div class="pain"><div class="pain-rk">01</div><div><div class="pain-t">Prior Authorization as a Second Disease</div><div class="pain-q">Mentioned in 82% of patient posts · Avg 54 comments per PA thread · Highest engagement in dataset</div><div class="pain-b">PA denial is experienced as a clinical emergency. Patients describe 4–12 week gaps between diagnosis and treatment while insurers request additional documentation. The emotional language in PA-related posts is the most extreme in the dataset, frequently using language of betrayal, rage, and abandonment.</div><div class="vb">"My cardiologist submitted. My specialist confirmed. The insurance company's reviewer — who is not a cardiologist — denied it. Three times." <div class="vb-src">Reddit · ATTR-CM patient · Nov 2024</div></div><div class="chips"><span class="chip">PA denial</span><span class="chip">appeals process</span><span class="chip">treatment delay</span><span class="chip">insurer logic</span></div></div></div>
+
+    <div class="pain"><div class="pain-rk">02</div><div><div class="pain-t">Diagnostic Delay — Years of Wrong Treatment</div><div class="pain-q">71% of patient posts reference Dx delay · Average delay cited: 3.8 years · Most common misdiagnoses: HFpEF (48%), CTS (31%), lumbar stenosis (21%)</div><div class="pain-b">Retrospective diagnostic delay posts carry deep narrative complexity. Patients describe not just the clinical cost — irreversible cardiac and neurological damage — but the psychological cost of years of self-doubt, dismissed symptoms, and fractured trust in the medical system.</div><div class="vb">"Three cardiologists. One neurologist. Eight years. All said different things. The last one ordered a pyrophosphate scan because he'd just attended a conference. That's the only reason I have a diagnosis." <div class="vb-src">Reddit · wtATTR-CM patient · Jan 2025</div></div><div class="chips"><span class="chip">HFpEF misdiagnosis</span><span class="chip">CTS red flag</span><span class="chip">years dismissed</span><span class="chip">scan not ordered</span></div></div></div>
+
+    <div class="pain"><div class="pain-rk">03</div><div><div class="pain-t">Drug Cost & Financial Toxicity</div><div class="pain-q">67% of patient posts mention cost · $225K+ Tafamidis most cited · Medicare transition fear in 38% of cost posts</div><div class="pain-b">Financial toxicity posts cluster around two moments: initial sticker shock at diagnosis and Medicare transition anxiety. The language is characterized by a shame dimension — patients reluctant to admit they cannot afford the medication. Confusion about PAP program eligibility is never resolved by manufacturer communications alone.</div><div class="vb">"The drug costs more than my house did in 1989. I have insurance. I still have an $8,000 deductible. What about when I turn 65?" <div class="vb-src">Reddit · ATTR-CM patient · Mar 2025</div></div><div class="chips"><span class="chip">$225K list price</span><span class="chip">PAP confusion</span><span class="chip">Medicare cliff</span><span class="chip">OOP shock</span></div></div></div>
+
+    <div class="pain"><div class="pain-rk">04</div><div><div class="pain-t">Invisible Drug — Adherence Without Feedback</div><div class="pain-q">43% of patients on stabilizers raise adherence doubts · "Is it working?" is the 4th most frequent patient question phrase · Adherence doubt posts spike at 3, 6, and 12-month treatment marks</div><div class="pain-b">The stabilizer mechanism — slowing progression rather than improving symptoms — creates a uniquely difficult adherence psychology. Community responses to adherence-doubt posts reveal that peer support is the primary adherence maintenance mechanism, not physician communication or pharma programs.</div><div class="vb">"Nine months on Vyndamax. Unchanged. Is that good? Is that bad? I genuinely can't tell if I'm protecting myself or just spending money I don't have." <div class="vb-src">Reddit · ATTR-CM patient · Feb 2025</div></div><div class="chips"><span class="chip">no felt benefit</span><span class="chip">adherence doubt</span><span class="chip">stabilizer education</span><span class="chip">6-month mark</span></div></div></div>
+
+    <div class="pain"><div class="pain-rk">05</div><div><div class="pain-t">Genetic Testing Paralysis (hATTR)</div><div class="pain-q">38% of hATTR posts address genetic disclosure · "How do I tell my kids" appears in 1 in 4 hATTR posts · Genetic counseling wait times cited as 3–6 months</div><div class="pain-b">hATTR patients carry a unique burden: the disease is not just personal — it is potentially shared by children and siblings. Posts in this cluster are the longest in the dataset, often spanning 800+ words as patients work through their thinking in real time with no clinical support.</div><div class="vb">"I know the right answer is to tell my daughter. She's 31. She could know early. But I keep imagining her face and I just — I can't do it yet." <div class="vb-src">Reddit · hATTR-PN patient · Feb 2025</div></div><div class="chips"><span class="chip">family disclosure</span><span class="chip">counseling gap</span><span class="chip">sibling screening</span><span class="chip">V30M / V122I</span></div></div></div>
+
+    <div class="pain"><div class="pain-rk">06</div><div><div class="pain-t">Center of Excellence Desert</div><div class="pain-q">29% of rural patients mention travel burden · Average distance to nearest amyloid center cited: 287 miles · Wait times cited: 3–8 months</div><div class="pain-b">Geographic access to ATTR specialists is highly concentrated in academic medical hubs. Patients outside Boston, NYC, Mayo, Cleveland, and Philadelphia describe de facto second-tier care. Telemedicine is discussed as a partial solution but not sufficient for initial diagnosis and treatment initiation.</div><div class="vb">"The nearest amyloid center is 5 hours away. I made that drive six times last year. My cardiologist here tries his best but I know he doesn't have the experience." <div class="vb-src">Reddit · ATTR-CM patient · Jan 2025</div></div><div class="chips"><span class="chip">rural access</span><span class="chip">travel burden</span><span class="chip">generalist management</span><span class="chip">telemedicine gap</span></div></div></div>
+
+    <div class="sub">Physician pain points — top 3 by HCP post frequency</div>
+
+    <div class="pain"><div class="pain-rk">01</div><div><div class="pain-t">Tafamidis vs. Acoramidis — Clinical Decision Without Data</div><div class="pain-q">77% of HCP posts Nov–Dec 2024 touch therapy selection · "No head-to-head data" cited in 63% of HCP therapy debate posts</div><div class="pain-b">The Acoramidis approval created an immediate clinical decision vacuum. With no head-to-head comparative trial, physicians are making treatment decisions based on mechanistic inference and formulary availability — none of which constitute sufficient clinical evidence for a $200K/year treatment change.</div><div class="vb">"I have 40 patients on Tafamidis. They all deserve an honest answer about whether they should switch. I don't have one. The data doesn't give me one." <div class="vb-src">Twitter/X · Academic cardiologist · Nov 2024</div></div></div></div>
+
+    <div class="pain"><div class="pain-rk">02</div><div><div class="pain-t">PA Documentation Burden at Practice Level</div><div class="pain-q">48% of HCP posts mention PA · 31% describe it as practice-limiting · ATTR PA cited as "most complex in cardiology" in multiple HCP posts</div><div class="pain-b">For practices without dedicated rare disease staff, ATTR therapy PA is practice-limiting. Documentation requirements exceed those for TAVR and other high-complexity cardiac procedures. Small practices are significantly disadvantaged relative to academic centers.</div><div class="vb">"We had to hire a dedicated staff member to handle ATTR prior authorizations. That is not sustainable for a private practice." <div class="vb-src">LinkedIn · Cardiology practice · Dec 2024</div></div></div></div>
+
+    <div class="pain"><div class="pain-rk">03</div><div><div class="pain-t">Pattern Recognition Gap — ATTR in HFpEF Patients</div><div class="pain-q">55% of HCP educational posts address screening gaps · "Missed ATTR" case discussions averaged 89 engagements — highest HCP thread type</div><div class="pain-b">Community cardiologists are surfacing the recognition that they have likely missed ATTR diagnoses in historical HFpEF cohorts. Missed diagnosis case discussions are the highest-engagement HCP post type — suggesting this is a live professional anxiety in the cardiologist community.</div><div class="vb">"I went back through my HFpEF panel from 2020–2022. Conservatively, 8–12 patients should have had a pyrophosphate scan. I ordered zero." <div class="vb-src">Twitter/X · Community cardiologist · Jan 2025</div></div></div></div>
+
+    <div class="ins ins-rose" style="margin-top:16px;"><div class="ins-lbl">Pain Point Insight</div><div class="ins-body">The top pain points for patients (PA barriers, diagnostic delay, drug cost) and physicians (comparative therapy data, PA burden, diagnostic recognition) share a common root cause: the healthcare system was not designed to handle ultra-high-cost rare disease therapies at scale. The pharma company that designs its programs explicitly around these system failures — rather than product features — will generate dramatically superior trust and brand differentiation.</div></div>
+  </div>
+</section>
+
+<!-- ══ QOL ══ -->
+<section id="s-qol">
+  <div class="page">
+    <div class="sh"><div class="sh-num">07 / Quality of Life Impact</div><h2 class="sh-title">How ATTR Reshapes Every Dimension of Life</h2><p class="sh-desc">QoL analysis drawn from patient and caregiver posts coded across 6 life domains. Severity scores are directional indices based on emotional intensity and mention frequency (0–100).</p></div>
+
+    <div class="sub">Domain-by-domain analysis</div>
+    <div class="g2">
+      <div class="qol-card"><div class="qol-d">Physical Domain</div><div class="qol-t">Progressive Functional Contraction</div><div class="qol-b">Exercise intolerance, dyspnea, fall risk, and increasing dependence for ADLs are the most consistently described physical manifestations. Patients describe a gradual "shrinking world" — first long trips, then driving, then stairs, then independence within the home. Loss of previously identity-defining physical activities generates acute identity crisis in previously active patients.</div><div class="imp"><div class="imp-l">Severity</div><div class="imp-t"><div class="imp-f" style="width:82%"></div></div><span style="font-family:'Space Mono',monospace;font-size:9px;color:var(--rose);margin-left:6px">82/100</span></div><div class="vb" style="margin-top:10px">"I ran half-marathons. Now I count steps on a Fitbit to stay under 4,000 because more than that and I need a day to recover." <div class="vb-src">Reddit · hATTR-PN patient · Dec 2024</div></div></div>
+
+      <div class="qol-card"><div class="qol-d">Emotional / Psychological Domain</div><div class="qol-t">Anticipatory Grief & Existential Burden</div><div class="qol-b">ATTR carries a specific psychological burden: patients know the trajectory. Depression, anxiety, and anticipatory grief are described in 68% of in-depth patient narrative posts. Nocturnal anxiety — late-night fear of cardiac events — is a consistent and underaddressed theme. Psychological support resources are virtually absent in current care programs.</div><div class="imp"><div class="imp-l">Severity</div><div class="imp-t"><div class="imp-f" style="width:89%"></div></div><span style="font-family:'Space Mono',monospace;font-size:9px;color:var(--rose);margin-left:6px">89/100</span></div><div class="vb" style="margin-top:10px">"3am again. Heart doing something weird. Is it the ATTR? Is it anxiety about the ATTR? At some point those two things become indistinguishable." <div class="vb-src">Reddit · ATTR-CM patient · Feb 2025</div></div></div>
+
+      <div class="qol-card"><div class="qol-d">Social Domain</div><div class="qol-t">Rare Disease Loneliness</div><div class="qol-b">ATTR's cultural invisibility creates chronic social isolation. Friends and family have no reference for the disease — conversations are met with blank incomprehension or dismissive minimization. Patients describe becoming the disease educator in every social interaction. Online communities function as the primary social validation space — the only place where ATTR is understood.</div><div class="imp"><div class="imp-l">Severity</div><div class="imp-t"><div class="imp-f" style="width:74%"></div></div><span style="font-family:'Space Mono',monospace;font-size:9px;color:var(--rose);margin-left:6px">74/100</span></div><div class="vb" style="margin-top:10px">"My friends try. But there are only so many times I can explain what transthyretin is before I stop trying and just say 'my heart.'" <div class="vb-src">Facebook · wtATTR-CM patient · Jan 2025</div></div></div>
+
+      <div class="qol-card"><div class="qol-d">Financial Domain</div><div class="qol-t">Structural Financial Toxicity</div><div class="qol-b">Financial burden extends beyond drug costs: specialist travel, lost income, caregiver income reduction, home modification, and multi-specialist copays create a total cost of illness exceeding published drug list prices for many patients. The financial shame dimension — reluctance to acknowledge dependency on manufacturer assistance programs — generates significant secondary burden.</div><div class="imp"><div class="imp-l">Severity</div><div class="imp-t"><div class="imp-f" style="width:93%"></div></div><span style="font-family:'Space Mono',monospace;font-size:9px;color:var(--rose);margin-left:6px">93/100</span></div><div class="vb" style="margin-top:10px">"My husband and I have not taken a vacation in three years. Every dollar goes to copays, travel, the deductible. And we are the lucky ones — we have insurance." <div class="vb-src">Facebook · ATTR caregiver · Mar 2025</div></div></div>
+
+      <div class="qol-card"><div class="qol-d">Occupational Domain</div><div class="qol-t">Workforce Exit & Identity Disruption</div><div class="qol-b">For working-age hATTR-PN patients (typically 40s–60s), premature workforce exit is a defining crisis. Loss of professional identity is described with as much grief as physical limitation — "I was a surgeon," "I was a teacher," "I was still working" appear with striking frequency in hATTR-PN posts.</div><div class="imp"><div class="imp-l">Severity</div><div class="imp-t"><div class="imp-f" style="width:71%"></div></div><span style="font-family:'Space Mono',monospace;font-size:9px;color:var(--rose);margin-left:6px">71/100</span></div><div class="vb" style="margin-top:10px">"I was a practicing cardiologist when I was diagnosed with hATTR. The irony is not lost on me. I had to stop practicing. That was harder than the diagnosis." <div class="vb-src">Twitter/X · hATTR-PN physician-patient · Apr 2025</div></div></div>
+
+      <div class="qol-card"><div class="qol-d">Caregiver QoL Domain</div><div class="qol-t">Invisible Caregiver Crisis</div><div class="qol-b">Caregiver QoL posts show the highest emotional intensity in the dataset. Caregivers describe losing their spousal relationship to the disease — the person they care for is present but profoundly changed. The caregiver's own health, career, social life, and psychological wellbeing are systematically sacrificed with almost no systemic support.</div><div class="imp"><div class="imp-l">Severity</div><div class="imp-t"><div class="imp-f" style="width:91%"></div></div><span style="font-family:'Space Mono',monospace;font-size:9px;color:var(--rose);margin-left:6px">91/100</span></div><div class="vb" style="margin-top:10px">"I am watching my husband disappear and I am disappearing too — but no one is tracking my outcomes." <div class="vb-src">Facebook · ATTR caregiver · Feb 2025</div></div></div>
+    </div>
+
+    <div class="ins" style="margin-top:16px;"><div class="ins-lbl">QoL Insight</div><div class="ins-body">Financial toxicity scores the highest QoL severity in the dataset (93/100) — ahead of physical functional decline (82/100). Patients are rating the system-created financial burden as more quality-of-life-damaging than the disease itself. This should fundamentally reframe how pharma approaches patient support programs: financial navigation and access clarity are not supplemental services — they are primary QoL interventions with outcomes-level importance.</div></div>
+  </div>
+</section>
+
+<!-- ══ KEYWORDS ══ -->
+<section id="s-keywords">
+  <div class="page">
+    <div class="sh"><div class="sh-num">08 / Keywords & Hashtags</div><h2 class="sh-title">The Language of ATTR Social Discourse</h2><p class="sh-desc">Top keywords, hashtags, and phrases by mention frequency. Font size reflects relative volume. Color indicates sentiment association: teal = positive/neutral, rose = negative-associated, amber = mixed.</p></div>
+
+    <div class="card" style="margin-bottom:16px;">
+      <div class="kw-cloud">
+        <span style="font-family:'Space Mono',monospace;font-size:22px;color:var(--teal);font-weight:700">amyloidosis</span>
+        <span style="font-family:'Space Mono',monospace;font-size:20px;color:var(--rose)">prior authorization</span>
+        <span style="font-family:'Space Mono',monospace;font-size:18px;color:var(--teal)">Tafamidis</span>
+        <span style="font-family:'Space Mono',monospace;font-size:17px;color:var(--rose)">insurance denial</span>
+        <span style="font-family:'Space Mono',monospace;font-size:17px;color:var(--teal)">ATTR-CM</span>
+        <span style="font-family:'Space Mono',monospace;font-size:16px;color:var(--amber)">Acoramidis</span>
+        <span style="font-family:'Space Mono',monospace;font-size:16px;color:var(--rose)">diagnosed late</span>
+        <span style="font-family:'Space Mono',monospace;font-size:15px;color:var(--teal)">HELIOS-B</span>
+        <span style="font-family:'Space Mono',monospace;font-size:15px;color:var(--rose)">heart failure</span>
+        <span style="font-family:'Space Mono',monospace;font-size:15px;color:var(--amber)">Vutrisiran</span>
+        <span style="font-family:'Space Mono',monospace;font-size:14px;color:var(--rose)">carpal tunnel</span>
+        <span style="font-family:'Space Mono',monospace;font-size:14px;color:var(--teal)">Vyndamax</span>
+        <span style="font-family:'Space Mono',monospace;font-size:14px;color:var(--rose)">$225,000</span>
+        <span style="font-family:'Space Mono',monospace;font-size:14px;color:var(--amber)">hATTR</span>
+        <span style="font-family:'Space Mono',monospace;font-size:13px;color:var(--teal)">gene therapy</span>
+        <span style="font-family:'Space Mono',monospace;font-size:13px;color:var(--rose)">misdiagnosed</span>
+        <span style="font-family:'Space Mono',monospace;font-size:13px;color:var(--teal)">Amvuttra</span>
+        <span style="font-family:'Space Mono',monospace;font-size:13px;color:var(--rose)">Medicare cliff</span>
+        <span style="font-family:'Space Mono',monospace;font-size:13px;color:var(--amber)">V122I</span>
+        <span style="font-family:'Space Mono',monospace;font-size:13px;color:var(--teal)">RNA silencer</span>
+        <span style="font-family:'Space Mono',monospace;font-size:12px;color:var(--rose)">burnout caregiver</span>
+        <span style="font-family:'Space Mono',monospace;font-size:12px;color:var(--amber)">switch drugs</span>
+        <span style="font-family:'Space Mono',monospace;font-size:12px;color:var(--teal)">Attruby</span>
+        <span style="font-family:'Space Mono',monospace;font-size:12px;color:var(--rose)">financial toxicity</span>
+        <span style="font-family:'Space Mono',monospace;font-size:12px;color:var(--amber)">genetic testing</span>
+        <span style="font-family:'Space Mono',monospace;font-size:12px;color:var(--teal)">CRISPR ATTR</span>
+        <span style="font-family:'Space Mono',monospace;font-size:11px;color:var(--teal)">pyrophosphate scan</span>
+        <span style="font-family:'Space Mono',monospace;font-size:11px;color:var(--rose)">denied again</span>
+        <span style="font-family:'Space Mono',monospace;font-size:11px;color:var(--amber)">wild-type ATTR</span>
+        <span style="font-family:'Space Mono',monospace;font-size:11px;color:var(--teal)">zilebesiran</span>
+        <span style="font-family:'Space Mono',monospace;font-size:11px;color:var(--rose)">is it working</span>
+        <span style="font-family:'Space Mono',monospace;font-size:11px;color:var(--plum)">tell my kids</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <table class="tbl">
+        <thead><tr><th>Hashtag</th><th>6-Month Mentions</th><th>Dominant Stakeholder</th><th>Sentiment</th><th>Peak Month</th></tr></thead>
+        <tbody>
+          <tr><td><strong>#ATTRamyloidosis</strong></td><td style="font-family:'Space Mono',monospace;color:var(--teal)">12,400</td><td>All stakeholders</td><td><span class="s-neu">Mixed</span></td><td>Apr 2025</td></tr>
+          <tr><td><strong>#amyloidosis</strong></td><td style="font-family:'Space Mono',monospace;color:var(--teal)">9,800</td><td>Advocacy, patients</td><td><span class="s-pos">Positive</span></td><td>Apr 2025</td></tr>
+          <tr><td><strong>#ATTR</strong></td><td style="font-family:'Space Mono',monospace;color:var(--teal)">7,200</td><td>HCPs, pharma</td><td><span class="s-neu">Neutral</span></td><td>Nov 2024</td></tr>
+          <tr><td><strong>#Attruby</strong></td><td style="font-family:'Space Mono',monospace;color:var(--teal)">4,100</td><td>Pharma, HCPs, patients</td><td><span class="s-pos">Mixed-pos</span></td><td>Nov 2024</td></tr>
+          <tr><td><strong>#HELIOSB</strong></td><td style="font-family:'Space Mono',monospace;color:var(--teal)">3,600</td><td>HCPs, pharma</td><td><span class="s-pos">Positive</span></td><td>Feb 2025</td></tr>
+          <tr><td><strong>#raredisease</strong></td><td style="font-family:'Space Mono',monospace;color:var(--teal)">3,200</td><td>Advocacy, patients</td><td><span class="s-neu">Mixed</span></td><td>Apr 2025</td></tr>
+          <tr><td><strong>#priorauthorization</strong></td><td style="font-family:'Space Mono',monospace;color:var(--rose)">2,100</td><td>Patients, caregivers</td><td><span class="s-neg">Highly neg</span></td><td>Nov–Dec 2024</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ══ STRATEGY ══ -->
+<section id="s-strategy">
+  <div class="page">
+    <div class="sh"><div class="sh-num">09 / Strategic Implications</div><h2 class="sh-title">What the Data Demands of Pharma</h2><p class="sh-desc">Eight evidence-grounded strategic opportunities derived directly from the social listening data. Each anchored to specific quantitative signals and qualitative community insight.</p></div>
+
+    <div class="strat"><div class="strat-n">01</div><div><div class="strat-t">Deploy Proactive PA Navigation as a Product-Level Feature</div><div class="strat-a">82% of patient posts mention PA barriers · #priorauthorization is highest-negative-sentiment hashtag · PA posts have 3× average engagement</div><div class="strat-b">PA navigation must be repositioned from supplemental service to core product feature. This means manufacturer-deployed PA specialists embedded at the prescribing practice, pre-authorization documentation kits, proactive denial prevention, and real-time appeal support. The brand that makes PA invisible for its therapy wins the first loyalty moment — which occurs before the first pill is taken.</div><div class="chips" style="margin-top:10px"><span class="chip">Patient Services</span><span class="chip">Access Strategy</span><span class="chip">Brand Differentiation</span></div></div></div>
+
+    <div class="strat"><div class="strat-n">02</div><div><div class="strat-t">Make the Invisible Drug Visible — Adherence as Communications Priority</div><div class="strat-a">43% of stabilizer patients publicly express adherence doubt · Adherence doubt posts spike at 3, 6, and 12-month marks — predictable intervention windows</div><div class="strat-b">The "is it working?" phenomenon is the most structurally predictable adherence risk in the dataset. Pharma must develop digital tools — biomarker tracking apps, 6MWT dashboards, NT-proBNP trend visualizations — that make disease stabilization tangible. Peer story content from patients who understand the stabilizer mechanism should be the primary adherence support medium. HCPs must set the "not getting worse = therapy success" expectation at initiation — not at month 8 when doubt has already set in.</div><div class="chips" style="margin-top:10px"><span class="chip">Adherence Programs</span><span class="chip">Digital Health</span><span class="chip">Patient Education</span></div></div></div>
+
+    <div class="strat"><div class="strat-n">03</div><div><div class="strat-t">Build Caregiver Programs as Standalone Brand Investment</div><div class="strat-a">Caregivers drive 24% of volume, 74% negative — highest distress signal in dataset · Facebook caregiver groups are pharma's largest engagement blind spot</div><div class="strat-b">No ATTR manufacturer currently has a meaningful caregiver-specific program. Given that caregivers are making adherence, care setting, and specialist referral decisions while experiencing acute psychological and financial crisis, this is simultaneously the largest unmet need and the easiest brand differentiation opportunity. A caregiver program should include coordination tools, financial navigation support, psychological telehealth access, and a peer caregiver community.</div><div class="chips" style="margin-top:10px"><span class="chip">Caregiver Support</span><span class="chip">Patient Services</span><span class="chip">Facebook Strategy</span></div></div></div>
+
+    <div class="strat"><div class="strat-n">04</div><div><div class="strat-t">Provide HCPs Comparative Therapy Decision Tools — Not Brand Promotion</div><div class="strat-a">77% of HCP posts Nov–Dec 2024 address therapy selection with no resolution · HCPs explicitly request "unbiased comparative data" in 41% of therapy debate posts</div><div class="strat-b">The post-Acoramidis HCP decision vacuum is a time-limited window. HCPs are actively seeking comparative guidance but explicitly skeptical of manufacturer-branded communications. Fund and publish real-world evidence analyses through independent KOLs, invest in society-endorsed comparative effectiveness tools (ACC/AHA-aligned), and position medical affairs as a genuine evidence resource rather than a promotional channel.</div><div class="chips" style="margin-top:10px"><span class="chip">Medical Affairs</span><span class="chip">HCP Education</span><span class="chip">Real-World Evidence</span></div></div></div>
+
+    <div class="strat"><div class="strat-n">05</div><div><div class="strat-t">Invest in V122I / Black Patient Outreach as Market Development + Health Equity</div><div class="strat-a">55% of advocacy posts address V122I equity gap · V122I carries ~3–4% prevalence in Black Americans (~1M+ potential carriers) · Underrepresented in trials and diagnosis</div><div class="strat-b">The V122I variant is the single largest untapped diagnosis opportunity in ATTR. Pharma investment in community health center outreach, Black HCP network engagement, culturally resonant awareness campaigns, and V122I-specific genetic screening programs will simultaneously address a genuine health equity need and expand the diagnosed patient population. This is not a corporate responsibility initiative — it is a primary market development strategy with material commercial upside.</div><div class="chips" style="margin-top:10px"><span class="chip">Health Equity</span><span class="chip">Market Development</span><span class="chip">V122I Strategy</span></div></div></div>
+
+    <div class="strat"><div class="strat-n">06</div><div><div class="strat-t">Integrate Mental Health Support Into Patient Program Architecture</div><div class="strat-a">89/100 severity score for emotional/psychological QoL domain · Nocturnal anxiety and anticipatory grief in 68% of in-depth patient narratives · Zero current pharma programs address this</div><div class="strat-b">Mental health integration is the highest-severity unmet need in the QoL dataset and the most differentiated territory available to any ATTR brand. A telehealth mental health partnership — featuring therapists trained in rare cardiovascular disease and genetic illness — positioned as a named patient benefit would immediately distinguish any brand. This service can be deployed at the highest-impact intervention moments: diagnosis, PA denial, and 6-month treatment marks.</div><div class="chips" style="margin-top:10px"><span class="chip">Mental Health</span><span class="chip">Patient QoL</span><span class="chip">Brand Loyalty</span></div></div></div>
+
+    <div class="strat"><div class="strat-n">07</div><div><div class="strat-t">Activate Facebook as a Primary Patient & Caregiver Channel</div><div class="strat-a">Facebook generates 19% of ATTR volume, highest per-post engagement (68 avg reactions), dominated by caregivers — yet has near-zero pharma presence</div><div class="strat-b">Facebook group discourse is the highest-engagement and most emotionally authentic channel in the ATTR dataset — yet pharma social listening programs rarely prioritize it. The strategy is to sponsor and support public advocacy group content, partner with Facebook Group administrators for patient support initiatives, and ensure branded social content is calibrated to the emotional register of Facebook's ATTR community rather than the clinical tone of Twitter/X.</div><div class="chips" style="margin-top:10px"><span class="chip">Social Strategy</span><span class="chip">Facebook</span><span class="chip">Caregiver Engagement</span></div></div></div>
+
+    <div class="strat"><div class="strat-n">08</div><div><div class="strat-t">Build Genetic Counseling Infrastructure as a Pharma-Funded Public Good</div><div class="strat-a">38% of hATTR posts address genetic disclosure anxiety · Counseling wait times cited as 3–6 months nationally · "How do I tell my kids" in 1 in 4 hATTR posts</div><div class="strat-b">The genetic counseling gap is the most acute unmet structural need for the hATTR community. Every diagnosed hATTR patient is a node in a family network with 50% carrier probability in first-degree relatives. A pharma-funded, telehealth-delivered genetic counseling service — positioned as a disease community contribution, not a branded asset — would accelerate diagnosis rates, generate profound advocacy goodwill, and establish long-term trust that no promotional campaign can replicate.</div><div class="chips" style="margin-top:10px"><span class="chip">Genetic Counseling</span><span class="chip">hATTR Strategy</span><span class="chip">Market Expansion</span></div></div></div>
+
+    <div class="ins ins-amber" style="margin-top:10px;"><div class="ins-lbl">Overarching Strategic Insight</div><div class="ins-body">The social listening data reveals a community whose needs have been comprehensively documented online — and comprehensively unmet by pharma. The highest-ROI strategic posture is not to communicate more clearly about drug efficacy, but to demonstrably solve the system problems that patients are screaming about in 48,000+ public posts. PA navigation, caregiver support, mental health access, genetic counseling, and financial clarity are not patient services line items — they are the primary competitive battleground in ATTR in 2025.</div></div>
+  </div>
+</section>
+
+<div style="border-top:2px solid var(--amx-blue-md);margin-top:40px;background:var(--surface);">
+  <footer>
+    <div style="display:flex;align-items:center;gap:16px;">
+      <!-- InfoVision footer logo -->
+      <svg viewBox="0 0 200 44" xmlns="http://www.w3.org/2000/svg" height="32" width="auto">
+        <text x="0" y="26" font-family="Georgia, serif" font-size="20" font-weight="700" fill="#1a3a6b" letter-spacing="1.5">INFO</text>
+        <polyline points="76,6 88,28 100,6" fill="none" stroke="#8B1A1A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+        <text x="100" y="26" font-family="Georgia, serif" font-size="20" font-weight="700" fill="#1a3a6b" letter-spacing="1.5">ISION</text>
+        <text x="0" y="40" font-family="Arial, sans-serif" font-size="8.5" fill="#6b7fa3" letter-spacing="0.4">#Accelerate<tspan font-weight="700" fill="#2952a3">Digital</tspan></text>
+      </svg>
+    </div>
+    <div style="text-align:right;">
+      <div class="fn" style="margin-bottom:3px;">ATTR Amyloidosis · USA · Oct 2024–Apr 2025 · 48,300+ posts analyzed</div>
+      <div class="fn">All figures are signal-based directional estimates. All verbatims are paraphrased composites.</div>
+    </div>
+  </footer>
+</div>
+
+<script>
+function showTab(id,el){
+  document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  el.classList.add('active');
+  window.scrollTo(0,0);
+}
+function showStk(id,el,cls){
+  document.querySelectorAll('.stk-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.stk-tab').forEach(t=>{t.className='stk-tab';});
+  document.getElementById(id).classList.add('active');
+  el.classList.add(cls);
+}
+</script>
+</body>
+</html>
